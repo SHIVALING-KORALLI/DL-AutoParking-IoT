@@ -1,0 +1,193 @@
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+#include <ArduinoJson.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+// Wi-Fi credentials
+const char* ssid = "svlng";
+const char* password = "12345678";
+
+// MQTT Broker details
+const char* mqtt_server = "172.20.10.12";
+const int mqtt_port = 1883;
+const char* mqtt_topic = "parking/slots/status";
+
+// OLED display settings
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET    -1
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+// Pin definitions for the LEDs (D0 to D7 for parking slots 1 to 8)
+const int ledPins[] = {D0, D3, D4, D5, D6, D7, D8, D9};
+
+// MQTT client
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+// WiFi connection setup
+void setup_wifi() {
+  delay(10);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  // Display on OLED
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0, 10);
+  display.print("Connecting to WiFi...");
+  display.display();
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+
+  // Display on OLED
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0, 10);
+  display.print("WiFi Connected!");
+  display.setCursor(0, 30);
+  display.print(WiFi.localIP());
+  display.display();
+}
+
+// MQTT callback function
+void callback(char* topic, byte* payload, unsigned int length) {
+  payload[length] = '\0';  // Null-terminate the payload
+
+  // Parse the received JSON payload
+  StaticJsonDocument<1024> doc;
+  DeserializationError error = deserializeJson(doc, payload);
+
+  if (error) {
+    Serial.print("deserializeJson() failed: ");
+    Serial.println(error.c_str());
+    return;
+  }
+
+  // Expected message format: {"slot1": 1, "slot2": 1, "slot3": 0, ...}
+  int freeSpaces = 0;
+  int firstFreeRow1 = -1;
+  int firstFreeRow2 = -1;
+
+  // Update LEDs and identify the first free slots in each row
+  for (int i = 0; i < 8; i++) {
+    String slotKey = "slot" + String(i + 1);
+    int status = doc[slotKey];
+
+    if (status == 0) {  // Free slot
+      freeSpaces++;
+      if (i < 4 && firstFreeRow1 == -1) {
+        firstFreeRow1 = i;  // First free slot in Row 1 (0-indexed)
+      } else if (i >= 4 && firstFreeRow2 == -1) {
+        firstFreeRow2 = i;  // First free slot in Row 2 (0-indexed)
+      }
+    }
+
+    // Update LEDs (Occupied -> HIGH, Free -> LOW)
+    //digitalWrite(ledPins[i], status == 1 ? HIGH : LOW);
+    digitalWrite(ledPins[i], status == 1 ? LOW : HIGH);
+  }
+
+  // Calculate distances to the first free slots
+  int closestFreeSlot = -1;
+  if (firstFreeRow1 != -1 || firstFreeRow2 != -1) {
+    int distanceRow1 = (firstFreeRow1 != -1) ? abs(0 - firstFreeRow1) : INT_MAX;
+    int distanceRow2 = (firstFreeRow2 != -1) ? abs(4 - firstFreeRow2) : INT_MAX;
+
+    if (distanceRow1 <= distanceRow2) {
+      closestFreeSlot = firstFreeRow1 + 1;  // Convert to 1-indexed
+    } else {
+      closestFreeSlot = firstFreeRow2 + 1;  // Convert to 1-indexed
+    }
+  }
+
+  // Clear the display
+  display.clearDisplay();
+
+  // Display the total free spaces and the closest free slot
+  display.setTextSize(2);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0, 0);
+  display.print("Free: ");
+  display.println(freeSpaces);
+
+  display.print("Closest: ");
+  if (closestFreeSlot != -1) {
+    display.println(closestFreeSlot);
+  } else {
+    display.println("N/A");
+  }
+
+  display.display();
+}
+
+// MQTT reconnection logic
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    String clientId = "ESP8266Client-" + String(random(0xffff), HEX);
+
+    if (client.connect(clientId.c_str())) {
+      Serial.println("Connected to MQTT!");
+      client.subscribe(mqtt_topic);
+    } else {
+      Serial.print("Failed to connect, rc=");
+      Serial.print(client.state());
+      Serial.println(" Retrying in 5 seconds...");
+      delay(5000);
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("Starting setup...");
+
+  // Initialize the OLED display (D1=SCL, D2=SDA)
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C, OLED_RESET)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for (;;);
+  }
+  display.display();
+
+  // Initialize LED pins
+  for (int i = 0; i < 8; i++) {
+    pinMode(ledPins[i], OUTPUT);
+    digitalWrite(ledPins[i], LOW);
+  }
+
+  // Connect to Wi-Fi
+  setup_wifi();
+
+  // Connect to MQTT Broker
+  client.setServer(mqtt_server, mqtt_port);
+  client.setCallback(callback);
+
+  while (!client.connected()) {
+    reconnect();
+  }
+
+  Serial.println("Setup complete.");
+}
+
+void loop() {
+  if (!client.connected()) {
+    reconnect();
+  }
+  client.loop();
+}

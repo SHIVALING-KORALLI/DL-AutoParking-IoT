@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Login - Parking Management{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+{% block content %}
+<div class="login-container">
+    <div class="logo-section">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Parking Management Logo" class="logo">
+        <h1>Parking Management System</h1>
+    </div>
+    <form id="loginForm" method="POST">
+        <div class="form-group">
+            <label for="username">Phone Number</label>
+            <input type="tel" id="username" name="username" required>
+        </div>     
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="client">Client</option>
+                <option value="management">Management</option>
+            </select>
+        </div> 
+        <div class="form-actions">
+            <button type="submit" class="btn-login">Login</button>
+            <a href="{{ url_for('register') }}" class="btn-register">Register New Account</a>
+        </div>
+    </form>    
+    {% if error %}
+    <div class="error-message" style="display: none;">{{ error }}</div>
+    {% else %}
+    <div class="error-message" style="display: none;"></div>
+    {% endif %}
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}

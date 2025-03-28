@@ -1,0 +1,90 @@
+<!-- Register.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Register - Parking Management{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <div class="logo-section">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Parking Management Logo" class="logo">
+        <h1>Parking Management System</h1>
+    </div>
+
+    <form id="registerForm" method="POST">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group phone-group">
+            <label for="phoneNumber">Phone Number</label>
+            <div class="phone-input-container">
+                <select id="countryCode" name="countryCode" required>
+                    <option value="">Select Country</option>
+                    <option value="+91">India (+91)</option>
+                    <option value="+60">Malaysia (+60)</option>
+                    <option value="+65">Singapore (+65)</option>
+                    <option value="+62">Indonesia (+62)</option>
+                    <option value="+66">Thailand (+66)</option>
+                    <option value="+63">Philippines (+63)</option>
+                    <option value="+880">Bangladesh (+880)</option>
+                    <option value="+94">Sri Lanka (+94)</option>
+                    <option value="+95">Myanmar (+95)</option>
+                    <option value="+977">Nepal (+977)</option>
+                    <option value="+86">China (+86)</option>
+                    <option value="+82">South Korea (+82)</option>
+                    <option value="+81">Japan (+81)</option>
+                    <option value="+84">Vietnam (+84)</option>
+                    <option value="+852">Hong Kong (+852)</option>
+                    <option value="+971">UAE (+971)</option>
+                    <option value="+966">Saudi Arabia (+966)</option>
+                    <option value="+1">USA/Canada (+1)</option>
+                    <option value="+44">UK (+44)</option>
+                    <option value="+61">Australia (+61)</option>
+                </select>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="numberPlate">Vehicle Number Plate</label>
+            <input type="text" id="numberPlate" name="numberPlate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <input type="hidden" id="role" name="role" value="client">
+
+        <div class="form-actions">
+            <button type="submit" class="btn-register">Register</button>
+            <a href="{{ url_for('login') }}" class="btn-login">Already have an account? Login</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,243 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/parking.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <h1>Parking Management System</h1>
+        </div>
+        <div class="navbar-user">
+            <span class="welcome-text">Welcome, <span class="username">{{ session.get('username', 'User') }}</span></span>
+            <a href="{{ url_for('logout') }}" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <div class="parking-info-container">
+        <div id="notification" class="notification"></div>
+        
+        <div class="slots-container">
+            <div class="slots-header">
+                <h2>Parking Slots Overview</h2>
+                <div class="legend">
+                    <span class="legend-item">
+                        <span class="status-dot free"></span> Available
+                    </span>
+                    <span class="legend-item">
+                        <span class="status-dot occupied"></span> Occupied
+                    </span>
+                </div>
+            </div>
+            
+            <div class="slots-grid" id="parkingSlotsGrid">
+                
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <h2>Book a Parking Slot</h2>
+            <p class="booking-instructions">
+                To book a parking slot, follow these steps:
+                <ol>
+                    <li>Select an available slot from the dropdown</li>
+                    <li>Choose your vehicle type</li>
+                    <li>Select the duration of your booking</li>
+                    <li>Click "Book Slot"</li>
+                </ol>
+            </p>
+            <div class="booking-form">
+                <select id="slot-select" class="booking-dropdown">
+                    <option value="">Select a Free Slot</option>
+                </select>
+                <select id="vehicle-type-select" class="booking-dropdown">
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Truck">Truck</option>
+                </select>
+                <select id="time-select" class="booking-dropdown">
+                    <option value="30">30 seconds</option>
+                    <option value="60">1 minute</option>
+                    <option value="3600">1 hour</option>
+                </select>
+                <button id="book-slot-btn" class="book-btn">Book Slot</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+    <script src="{{ url_for('static', filename='js/parking_info.js') }}"></script>
+</body>
+</html>
+ -->
+
+
+<!-- Clieny.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/parking.css') }}">
+    <style>
+        /* Additional CSS for consistent card sizes */
+        .parking-slot {
+            min-height: 150px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        /* Additional tooltip for slot 6 */
+        .slot-reserved-tooltip {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffc107;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 100;
+            white-space: nowrap;
+        }
+        
+        /* Disabled booking section */
+        .booking-section.disabled {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .booking-section.disabled::after {
+            content: "Booking unavailable due to capacity limits";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 100;
+            text-align: center;
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <h1>Parking Management System</h1>
+        </div>
+        <div class="navbar-user">
+            <span class="welcome-text">Welcome, <span class="username">{{ session.get('username', 'User')
+                    }}</span></span>
+            <a href="{{ url_for('logout') }}" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <div class="parking-info-container">
+        <div id="notification" class="notification"></div>
+
+        <div class="slots-container">
+            <div class="slots-header">
+                <h2>Parking Slots Overview</h2>
+                <div class="legend">
+                    <span class="legend-item">
+                        <span class="status-dot free"></span> Available
+                    </span>
+                    <span class="legend-item">
+                        <span class="status-dot occupied"></span> Occupied
+                    </span>
+                    <span class="legend-item">
+                        <span class="status-dot reserved"></span> Reserved
+                    </span>
+                </div>
+            </div>
+
+            <div class="parking-layout">
+                <div class="entrance-exit">
+                    <div class="arrow-indicator">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Entrance/Exit</span>
+                    </div>
+                </div>
+
+                <div class="parking-grid">
+                    <!-- Top Row (Slots 1-4) -->
+                    <div class="parking-row" id="topRow">
+                        <div class="yield-sign left">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Row (Slots 5-8) -->
+                    <div class="parking-row" id="bottomRow">
+                        <div class="yield-sign right">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Existing Slots Grid -->
+            <div class="slots-grid" id="parkingSlotsGrid"></div>
+        </div>
+
+        <div class="booking-section" id="booking-section">
+            <h2>Book a Parking Slot</h2>
+            <div class="booking-instructions">
+                <h3>Booking Instructions</h3>
+                <ol>
+                    <li>Select an available slot from the dropdown</li>
+                    <li>Choose your vehicle type</li>
+                    <li>Select the duration of your booking</li>
+                    <li>Click "Book Slot"</li>
+                </ol>
+                <p class="booking-note">Note: Booking is disabled when 5 or more slots are occupied</p>
+                <p class="booking-note">Note: Slot 6 is reserved for management users only</p>
+            </div>
+            <div class="booking-form">
+                <select id="slot-select" class="booking-dropdown">
+                    <option value="">Select a Free Slot</option>
+                </select>
+                <select id="vehicle-type-select" class="booking-dropdown">
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Truck">Truck</option>
+                </select>
+                <select id="time-select" class="booking-dropdown">
+                    <option value="30">30 seconds</option>
+                    <option value="60">1 minute</option>
+                    <option value="3600">1 hour</option>
+                </select>
+                <button id="book-slot-btn" class="btn book-btn">Book Slot</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+    <script src="{{ url_for('static', filename='js/parking_info.js') }}"></script>
+</body>
+
+</html>
+

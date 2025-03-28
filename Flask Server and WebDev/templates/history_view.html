@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Parking History{% endblock %}
+
+{% block extra_css %}
+<style>
+    .history-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .header-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    
+    tr:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .status-occupied {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+    
+    .status-free {
+        color: #27ae60;
+        font-weight: bold;
+    }
+    
+    .download-btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .back-btn {
+        background-color: #555;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="history-container">
+    <div class="header">
+        <h1>Parking History - {{ date }}</h1>
+        <div class="header-buttons">
+            <a href="/download_history_xml" class="download-btn">Download XML</a>
+            <a href="{{ url_for('management_dashboard') }}" class="back-btn">Back to Dashboard</a>
+        </div>
+    </div>
+    
+    {% if slots_history %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Slot ID</th>
+                    <th>Status</th>
+                    <th>Vehicle Type</th>
+                    <th>Plate Number</th>
+                    <th>Client Name</th>
+                    <th>Entry Time</th>
+                    <th>Exit Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for slot in slots_history %}
+                <tr>
+                    <td>{{ slot.id }}</td>
+                    <td class="status-{{ slot.status|lower }}">{{ slot.status }}</td>
+                    <td>{{ slot.vehicle_type }}</td>
+                    <td>{{ slot.plate_number }}</td>
+                    <td>{{ slot.client_name }}</td>
+                    <td>{{ slot.entry_time }}</td>
+                    <td>{{ slot.exit_time if slot.exit_time != 'N/A' else '-' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No parking history available for today.</p>
+    {% endif %}
+</div>
+{% endblock %}

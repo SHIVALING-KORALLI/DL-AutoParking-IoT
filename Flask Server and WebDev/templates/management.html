@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Management Dashboard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/management.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="management-container">
+    <div class="header">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+            <div>
+                <h1>Management Dashboard</h1>
+                <p>Welcome, {{ session.get('username', 'Admin') }}</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <a href="{{ url_for('manage_users') }}" class="btn-manage-users">Manage Users</a>
+            <a href="/view_history" class="btn-view-history">View History</a>
+            <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-layout">
+        <div class="video-feed">
+            <h2>Live Feed</h2>
+            <div class="video-container">
+                <img id="detected-frame" alt="Detected Frame">
+                <div class="no-feed-message">
+                    <p>No video feed available</p>
+                    <button id="startDetection" class="btn-primary">Start Detection</button>
+                </div>
+            </div>
+        </div>
+        <div class="slots-info">
+            <h2>Parking Slots Status</h2>
+            <div class="slots-grid" id="parkingSlots">
+                <!-- Slots will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="slotModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Slot Details</h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/management.js') }}"></script>
+{% endblock %}
