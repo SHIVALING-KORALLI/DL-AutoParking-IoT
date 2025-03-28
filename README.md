@@ -28,7 +28,7 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 ## 🔧 System Architecture
 
 1. **Computer Vision Detection**
-   - YOLOv11 processes camera feed
+   - YOLO11 processes camera feed
    - Identifies vehicle presence
    - Updates slot status in real-time
 
@@ -55,8 +55,8 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/SHIVALING-KORALLI/Parking-Management-System.git
-   cd Parking-Management-System
+   git clone https://github.com/SHIVALING-KORALLI/DL-AutoParking-IoT.git
+   cd DL-AutoParking-IoT
    ```
 
 2. **Install Dependencies**
