@@ -1,5 +1,3 @@
-#app.py
-
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_socketio import SocketIO
 from flask_sqlalchemy import SQLAlchemy
@@ -154,12 +152,34 @@ class MQTTManager:
         self.broker_port = broker_port
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
+        self.client.on_disconnect = self.on_disconnect  # Add disconnect handler
         self.booking_confirmations = {}
+        self.is_connected = False
+        self.reconnect_timer = None
     
     def on_connect(self, client, userdata, flags, rc):
-        print(f"Connected to MQTT broker with result code {rc}")
-        client.subscribe("parking/commands")
-        client.subscribe("parking/booking_confirm")  # Added new subscription
+        if rc == 0:
+            print(f"Connected to MQTT broker successfully")
+            self.is_connected = True
+            # Clear any reconnection timer
+            if self.reconnect_timer:
+                self.reconnect_timer.cancel()
+                self.reconnect_timer = None
+            # Subscribe to topics
+            client.subscribe("parking/commands")
+            client.subscribe("parking/booking_confirm")
+        else:
+            print(f"Failed to connect to MQTT broker with result code {rc}")
+            self.is_connected = False
+            self.schedule_reconnect()
+
+    def on_disconnect(self, client, userdata, rc):
+        self.is_connected = False
+        if rc != 0:
+            print(f"Unexpected disconnection from MQTT broker with code {rc}")
+            self.schedule_reconnect()
+        else:
+            print("Disconnected from MQTT broker normally")
 
     def on_message(self, client, userdata, msg):
         print(f"Received message on topic {msg.topic}: {msg.payload.decode()}")
@@ -193,27 +213,62 @@ class MQTTManager:
                     'message': 'Booking could not be confirmed by the system'
                 })
     
+    def schedule_reconnect(self):
+        """Schedule a reconnection attempt after 30 seconds"""
+        import threading
+        if not self.reconnect_timer:
+            print("Scheduling MQTT reconnection in 30 seconds...")
+            self.reconnect_timer = threading.Timer(30.0, self.connect)
+            self.reconnect_timer.daemon = True  # Allow program to exit even if timer is running
+            self.reconnect_timer.start()
+    
     def connect(self):
+        """Connect to the MQTT broker with retry mechanism"""
         try:
+            if self.reconnect_timer:
+                self.reconnect_timer.cancel()
+                self.reconnect_timer = None
+                
+            print(f"Attempting to connect to MQTT broker at {self.broker_host}:{self.broker_port}...")
             self.client.connect(self.broker_host, self.broker_port, 60)
             self.client.loop_start()
         except Exception as e:
+            self.is_connected = False
             print(f"Failed to connect to MQTT broker: {e}")
+            self.schedule_reconnect()
 
     def publish_parking_status(self, slots):
+        """Publish parking status and attempt reconnect if disconnected"""
+        if not self.is_connected:
+            print("Not connected to MQTT broker. Attempting to reconnect...")
+            self.connect()
+            return
+            
         try:
             status_data = {slot_id: 1 if details["status"].lower() == "occupied" else 0 
                           for slot_id, details in slots.items()}
             message = json.dumps(status_data)
-            self.client.publish("parking/slots/status", message)
-            print(f"Published parking status: {message}")
+            result = self.client.publish("parking/slots/status", message)
+            if result.rc == 0:
+                print(f"Published parking status: {message}")
+            else:
+                print(f"Failed to publish message, result code: {result.rc}")
         except Exception as e:
             print(f"Failed to publish parking status: {e}")
+            # If we hit an exception during publish, try to reconnect
+            self.is_connected = False
+            self.schedule_reconnect()
     
     def cleanup(self):
+        """Clean up resources properly"""
+        if self.reconnect_timer:
+            self.reconnect_timer.cancel()
+            self.reconnect_timer = None
+            
         self.client.loop_stop()
         self.client.disconnect()
 
+# Initialize the MQTT manager
 mqtt_manager = MQTTManager()
 mqtt_manager.connect()
 
@@ -481,7 +536,21 @@ def auto_release_spots():
                 import traceback
                 logger.error(traceback.format_exc())
                 continue
- 
+            
+@socketio.on('connect')
+def handle_connect():
+    # Send current parking slots state to newly connected client
+    socketio.emit('update_slots_client', {'slots': parking_slots}, room=request.sid)
+    
+    # If you have a current frame, send that too
+    if current_frame:
+        socketio.emit('update_slots_and_frame', {
+            'frame': current_frame,
+            'slots': parking_slots
+        }, room=request.sid)
+    
+    logger.info(f"Client connected: {request.sid}, sent current state with {len(parking_slots)} slots")
+
 @socketio.on('frame_and_slots')
 def handle_frame_and_slots(data):
     global current_frame

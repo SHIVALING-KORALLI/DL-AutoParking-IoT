@@ -6,7 +6,7 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 
 ## ✨ Key Features
 
-- **Real-time Vehicle Detection**: Advanced YOLOv11 deep learning model
+- **Real-time Vehicle Detection**: Advanced YOLO11 deep learning model
 - **Automated Slot Tracking**: Dynamic parking slot status updates
 - **User Management**: Role-based login (Client & Management)
 - **Booking System**: Reserve and release parking slots
