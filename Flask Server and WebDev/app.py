@@ -290,7 +290,7 @@ def check_and_reset_incidents(user):
     """Reset incident count if reset period has passed"""
     if user and user.last_incident_reset:
         days_passed = (datetime.now() - user.last_incident_reset).days
-        if days_passed >= 30:  # Reset after 30 days
+        if days_passed >= 5:  # Reset after 5 days
             user.parking_incidents = 0
             user.last_incident_reset = datetime.now()
             db.session.commit()
@@ -495,7 +495,7 @@ def auto_release_spots():
                                     # Get user for notification
                                     user = User.query.filter_by(name=slot['client_name']).first()
                                     if user:
-                                        send_sms(user.phone_number, f"Your booking for Slot {slot_id} has expired and has been released.")
+                                        send_sms(user.phone_number, f"Your booking for {slot_id} has expired and has been released.")
                                     
                                     # Release the slot completely
                                     slot.update({
