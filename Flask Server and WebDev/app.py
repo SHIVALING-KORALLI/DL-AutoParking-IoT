@@ -1,3 +1,5 @@
+#app.py
+
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_socketio import SocketIO
 from flask_sqlalchemy import SQLAlchemy
@@ -34,7 +36,7 @@ twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 
 # XML configuration
-XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History"
+XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking_history"
 os.makedirs(XML_FOLDER, exist_ok=True)
 
 # Set up logging
@@ -146,7 +148,9 @@ def update_parking_slot_xml(slot_id, status, vehicle_type, plate_number, timesta
         logger.info(f"Successfully updated parking data for slot {slot_id}")
 
 class MQTTManager:
-    def __init__(self, broker_host="172.20.10.12", broker_port=1883):
+    def __init__(self, broker_host="localhost", broker_port=1883):
+        self.broker_host = os.getenv('MQTT_BROKER_HOST', broker_host)
+        self.broker_port = int(os.getenv('MQTT_BROKER_PORT', broker_port))
         self.client = mqtt.Client()
         self.broker_host = broker_host
         self.broker_port = broker_port
@@ -228,14 +232,17 @@ class MQTTManager:
             if self.reconnect_timer:
                 self.reconnect_timer.cancel()
                 self.reconnect_timer = None
-                
+            
             print(f"Attempting to connect to MQTT broker at {self.broker_host}:{self.broker_port}...")
-            self.client.connect(self.broker_host, self.broker_port, 60)
+            # Set a shorter connection timeout
+            self.client.connect_async(self.broker_host, self.broker_port, 10)
             self.client.loop_start()
+            return True
         except Exception as e:
             self.is_connected = False
             print(f"Failed to connect to MQTT broker: {e}")
             self.schedule_reconnect()
+            return False
 
     def publish_parking_status(self, slots):
         """Publish parking status and attempt reconnect if disconnected"""
@@ -383,6 +390,9 @@ def handle_wrong_parking(booked_slot_id, actual_slot_id, user):
         logger.error(traceback.format_exc())
         db.session.rollback()
 
+
+
+#app.py
 # Fix the wrong parking check function to only focus on booked slots
 def check_wrong_parking():
     """Check for vehicles parked in wrong slots"""
@@ -536,6 +546,25 @@ def auto_release_spots():
                 import traceback
                 logger.error(traceback.format_exc())
                 continue
+
+# Additional Socket.IO event handler to handle explicit requests for slot updates
+@socketio.on('get_slots')
+def handle_get_slots():
+    """
+    Handle explicit requests for slot updates from clients.
+    """
+    try:
+        logger.info(f"Client {request.sid} requested slots update")
+        socketio.emit('update_slots_client', {'slots': parking_slots}, room=request.sid)
+        
+        # If you have a current frame, send that too
+        if current_frame:
+            socketio.emit('update_slots_and_frame', {
+                'frame': current_frame,
+                'slots': parking_slots
+            }, room=request.sid)
+    except Exception as e:
+        logger.error(f"Error handling get_slots request: {e}")
             
 @socketio.on('connect')
 def handle_connect():
@@ -955,30 +984,40 @@ def handle_book_spot(data):
         # Log confirmation of slot data update
         logger.info(f"Updated slot data: {parking_slots[spot_id]}")
         
-        # Update XML
-        update_parking_slot_xml(
-            slot_id=spot_id,
-            status='Occupied',
-            vehicle_type=vehicle_type,
-            plate_number=user.number_plate,
-            timestamp=timestamp,
-            client_name=user.name
-        )
-        
-        mqtt_manager.publish_parking_status(parking_slots)
-        send_sms(user.phone_number, f"Parking {spot_id} has been booked for {booking_duration//60} minutes.")
-        
-        # Emit updates
-        socketio.emit('update_slots_and_frame', {
-            'frame': current_frame,
-            'slots': parking_slots
-        })
+        # First emit the UI updates immediately before doing slower operations
         socketio.emit('update_slots_client', {'slots': parking_slots})
         socketio.emit('slot_status_changed', {
             'slot_id': spot_id,
             'status': 'Occupied',
             'slots': parking_slots
         })
+        socketio.emit('update_slots_and_frame', {
+            'frame': current_frame,
+            'slots': parking_slots
+        })
+        
+        # Start background operations in a separate thread to avoid blocking
+        def background_operations():
+            try:
+                # Update XML
+                update_parking_slot_xml(
+                    slot_id=spot_id,
+                    status='Occupied',
+                    vehicle_type=vehicle_type,
+                    plate_number=user.number_plate,
+                    timestamp=timestamp,
+                    client_name=user.name
+                )
+                
+                # Publish to MQTT
+                mqtt_manager.publish_parking_status(parking_slots)
+                
+                # Send SMS notification - last step as it's often slowest
+                send_sms(user.phone_number, f"Parking {spot_id} has been booked for {booking_duration//60} minutes.")
+            except Exception as e:
+                logger.error(f"Error in booking background operations: {e}")
+                
+        threading.Thread(target=background_operations).start()
         
         return {'success': True, 'message': f'{spot_id} booked successfully!'}
     else:
@@ -991,7 +1030,7 @@ def handle_book_spot(data):
 # First, let's fix the release_spot function to properly handle the slot ID
 @socketio.on('release_spot')
 def handle_release_spot(data):
-    spot_id = data.get('spot_id')  # Changed from data['spot_id'] to data.get('spot_id')
+    spot_id = data.get('spot_id')
     
     # Log the incoming release request for debugging
     logger.info(f"Release request received for spot: {spot_id}")
@@ -1030,39 +1069,51 @@ def handle_release_spot(data):
             })
             return {'success': False, 'message': 'You can only release your own booked slot'}
         
-        # Now safely release the slot
-        has_car = parking_slots[spot_id].get('plate_number', '') != ''
+        # Now safely release the slot - IMPORTANT: Always set to Free regardless of plate detection
+        # This ensures UI updates correctly
         parking_slots[spot_id].update({
-            'status': 'Occupied' if has_car else 'Free',  # Keep Occupied if a car is detected
-            'client_name': '',  # Clear client_name but keep other detection data if present
+            'status': 'Free',  # ALWAYS set to Free for UI update
+            'client_name': '',
             'timestamp': '',
-            'booking_duration': 3600  # Reset to default
+            'booking_duration': 3600,  # Reset to default
+            'vehicle_type': '',  # Clear vehicle type
+            'plate_number': ''   # Clear plate number - IMPORTANT for UI
         })
         
-        # Update XML
-        update_parking_slot_xml(
-            slot_id=spot_id,
-            status=parking_slots[spot_id]['status'],
-            vehicle_type=parking_slots[spot_id].get('vehicle_type', ''),
-            plate_number=parking_slots[spot_id].get('plate_number', ''),
-            timestamp=datetime.now().isoformat(),
-            client_name=''
-        )
-        
-        # Publish the updated status to MQTT
-        mqtt_manager.publish_parking_status(parking_slots)
-        
-        # Send SMS notification
-        send_sms(user.phone_number, f"Parking {spot_id} has been released.")
-        
-        # Emit updates to all clients
-        socketio.emit('update_slots_and_frame', {'frame': current_frame, 'slots': parking_slots})
-        socketio.emit('update_slots_client', {'slots': parking_slots})
+        # First emit UI updates immediately
         socketio.emit('slot_status_changed', {
             'slot_id': spot_id,
-            'status': parking_slots[spot_id]['status'],
+            'status': 'Free',  # Always Free to ensure UI updates
             'slots': parking_slots
         })
+        socketio.emit('update_slots_client', {'slots': parking_slots})
+        socketio.emit('update_slots_and_frame', {
+            'frame': current_frame,
+            'slots': parking_slots
+        })
+        
+        # Start background operations in a separate thread
+        def background_operations():
+            try:
+                # Update XML
+                update_parking_slot_xml(
+                    slot_id=spot_id,
+                    status='Free',  # Always free in XML too
+                    vehicle_type='',
+                    plate_number='',
+                    timestamp=datetime.now().isoformat(),
+                    client_name=''
+                )
+                
+                # Publish the updated status to MQTT
+                mqtt_manager.publish_parking_status(parking_slots)
+                
+                # Send SMS notification
+                send_sms(user.phone_number, f"Parking {spot_id} has been released.")
+            except Exception as e:
+                logger.error(f"Error in release background operations: {e}")
+        
+        threading.Thread(target=background_operations).start()
         
         logger.info(f"Slot {spot_id} released successfully by {user.name}")
         return {'success': True, 'message': f'{spot_id} released successfully!'}

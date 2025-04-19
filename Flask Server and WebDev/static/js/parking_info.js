@@ -1,3 +1,4 @@
+// First, let's consolidate the duplicate slot_auto_released event handlers
 const socket = io();
 let currentUser = '';
 let availableSlots = [];
@@ -33,7 +34,7 @@ function findNearestFreeSlot(slots) {
     // Get all free slots
     const freeSlots = Object.entries(slots)
         .filter(([_, slot]) => slot.status.toLowerCase() === 'free')
-        .map(([_, slot]) => slot);
+        .map(([slotId, slot]) => ({ ...slot, slot_id: slotId }));
     
     if (freeSlots.length === 0) return null;
     
@@ -93,12 +94,18 @@ function getEnhancedSlotDescription(slot, slots) {
     return `${descriptions[slotNum]}${isNearest ? '\nNearest to Entrance/Exit' : ''}`;
 }
 
-// Fix the createSlotCard function to only show release button for properly booked slots
 function createSlotCard(slot, slots) {
     const slotNum = parseInt(slot.slot_id.replace('slot', ''));
     const card = document.createElement('div');
-    card.className = `parking-slot ${slot.status.toLowerCase()}`;
-    card.id = `slot${slotNum}`;
+    
+    // Handle special case for slot 6 - It should always show as reserved unless occupied
+    let statusClass = slot.status.toLowerCase();
+    if (slotNum === 6 && statusClass === 'free') {
+        statusClass = 'reserved';
+    }
+    
+    card.className = `parking-slot ${statusClass}`;
+    card.id = `${slot.slot_id}`; // Ensure we use the actual slot_id from the data
     
     // Set fixed dimensions to ensure consistent card sizes
     card.style.minHeight = '150px';
@@ -107,30 +114,31 @@ function createSlotCard(slot, slots) {
     const description = getEnhancedSlotDescription(slot, slots);
     const tooltipPosition = slotNum <= 4 ? 'top' : 'bottom';
     
-    // FIXED: Only show release button if slot has both client_name AND timestamp (properly booked)
-    // This ensures only slots that were actually booked by the user show a release button
-    const isProperlyBooked = (
+    // Check if this slot belongs to the current user
+    const isUsersSlot = (
         slot.status.toLowerCase() === 'occupied' && 
         slot.client_name && 
-        slot.client_name.toLowerCase() === currentUser.toLowerCase() &&
-        slot.timestamp && 
-        slot.timestamp !== '' &&
-        typeof slot.booking_duration !== 'undefined'
+        slot.client_name.toLowerCase() === currentUser.toLowerCase()
     );
     
-    // Simplified card content with tooltip
+    // Add reserved message for slot 6
+    const reservedTooltip = slotNum === 6 && statusClass === 'reserved' ? 
+        `<div class="slot-reserved-tooltip">Reserved for Management</div>` : '';
+    
+    // Simplified card content with tooltip - REMOVED client_name display
     card.innerHTML = `
+        ${reservedTooltip}
         <div class="slot-header">
             <h3>Slot ${slotNum}</h3>
-            <span class="status-badge ${slot.status.toLowerCase()}">
-                ${slot.status}
+            <span class="status-badge ${statusClass}">
+                ${slotNum === 6 && statusClass === 'reserved' ? 'Reserved' : slot.status}
             </span>
         </div>
         <div class="slot-tooltip ${tooltipPosition}">
             ${description}
         </div>
         <div class="slot-content" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-end;">
-            ${isProperlyBooked ? `
+            ${isUsersSlot ? `
                 <div class="slot-actions" style="margin-top: auto;">
                     <button class="btn release-btn" type="button">Release Slot</button>
                 </div>
@@ -143,19 +151,24 @@ function createSlotCard(slot, slots) {
     if (releaseBtn) {
         releaseBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            releaseSlot(slot.slot_id); // FIXED: Pass the full slot.slot_id instead of just the number
+            releaseSlot(slot.slot_id);
         });
     }
 
     return card;
 }
 
-
 function updateSlots(slots) {
+    console.log('Updating slots with:', slots);
     const topRow = document.getElementById('topRow');
     const bottomRow = document.getElementById('bottomRow');
     const slotSelect = document.getElementById('slot-select');
     const bookingSection = document.getElementById('booking-section');
+    
+    if (!topRow || !bottomRow) {
+        console.error('Could not find topRow or bottomRow elements');
+        return;
+    }
     
     // Clear existing slots but keep yield signs
     while (topRow.children.length > 1) {
@@ -175,7 +188,13 @@ function updateSlots(slots) {
         topRow.appendChild(message.cloneNode(true));
         bottomRow.appendChild(message.cloneNode(true));
     } else {
-        Object.values(slots).forEach(slot => {
+        Object.entries(slots).forEach(([slotId, slotData]) => {
+            // Make sure the slot has all required properties
+            const slot = {
+                ...slotData,
+                slot_id: slotId // Ensure slot_id is included in the data
+            };
+            
             // FIXED: Ensure the slot status is correct before rendering
             // This prevents showing both "free" status and release button
             if (slot.client_name && slot.client_name.toLowerCase() === currentUser.toLowerCase()) {
@@ -326,7 +345,6 @@ function bookSlot() {
     });
 }
 
-// Fix the releaseSlot function to pass the complete slot ID
 function releaseSlot(slotId) {
     // Ensure slotId is correctly formatted
     if (!slotId.startsWith('slot')) {
@@ -360,17 +378,29 @@ function releaseSlot(slotId) {
     });
 }
 
-// Socket event handlers
+// Improved socket connection handling with retry mechanism
 socket.on('connect', () => {
     console.log('Connected to server');
+    
+    // Clear any reconnection notification
+    const reconnectNotification = document.getElementById('reconnect-notification');
+    if (reconnectNotification) {
+        reconnectNotification.style.display = 'none';
+    }
+    
+    // Get current user and then fetch slots
     fetch('/get_current_user')
         .then(response => response.json())
         .then(data => {
             if (data && data.name) {
                 currentUser = data.name;
+                console.log(`Current user: ${currentUser}`);
+                
+                // Request initial slots data
                 socket.emit('get_slots');
             } else {
                 console.error('Failed to get user name from response');
+                showNotification('Failed to get user information', 'error');
             }
         })
         .catch(error => {
@@ -379,19 +409,75 @@ socket.on('connect', () => {
         });
 });
 
+// FIXED: Consolidated slot_auto_released event handler
+socket.on('slot_auto_released', data => {
+    console.log('Slot auto-released received:', data);
+    const slotNum = data.slot_id.replace('slot', '');
+    showNotification(`Slot ${slotNum} has been automatically released`, 'info');
+    
+    // Force refresh slots immediately
+    console.log('Requesting slots update after auto-release');
+    socket.emit('get_slots');
+    
+    // Also update the UI directly to ensure immediate visual feedback
+    const slotElement = document.getElementById(data.slot_id);
+    if (slotElement) {
+        slotElement.className = 'parking-slot free';
+        const statusBadge = slotElement.querySelector('.status-badge');
+        if (statusBadge) {
+            statusBadge.className = 'status-badge free';
+            statusBadge.textContent = 'Free';
+        }
+        
+        // Remove any release buttons
+        const releaseBtn = slotElement.querySelector('.release-btn');
+        if (releaseBtn) {
+            const actions = releaseBtn.closest('.slot-actions');
+            if (actions) {
+                actions.remove();
+            }
+        }
+        
+        console.log(`Updated UI for auto-released slot ${data.slot_id}`);
+    }
+});
+
+// Improved update_slots_client handler with better error handling
 socket.on('update_slots_client', data => {
+    console.log('Received slot update:', data);
+    
+    // Check if we actually got slots data
+    if (!data || !data.slots) {
+        console.error('Invalid slots data received:', data);
+        return;
+    }
+    
+    // Log the current status of each slot
+    Object.entries(data.slots).forEach(([slotId, slot]) => {
+        console.log(`${slotId}: status=${slot.status}, client=${slot.client_name || 'none'}`);
+    });
+    
+    // Update the UI with the new slots data
     updateSlots(data.slots);
+});
+
+// FIXED: Add event handler for update_slots_and_frame
+socket.on('update_slots_and_frame', data => {
+    console.log('Received slots and frame update');
+    if (data && data.slots) {
+        updateSlots(data.slots);
+    }
 });
 
 socket.on('slot_status_changed', data => {
     // When slot status changes, immediately refresh all slots
-    updateSlots(data.slots);
-});
-
-socket.on('slot_auto_released', data => {
-    showNotification(`Slot ${data.slot_id} has been automatically released`);
-    // Force refresh slots when auto-released
-    socket.emit('get_slots');
+    console.log('Slot status changed:', data);
+    if (data && data.slots) {
+        updateSlots(data.slots);
+    } else {
+        // If no slots data provided, request fresh data
+        socket.emit('get_slots');
+    }
 });
 
 socket.on('twilio_notification_sent', data => {
@@ -419,30 +505,77 @@ socket.on('slot_release_failed', data => {
 });
 
 socket.on('disconnect', () => {
+    console.error('Disconnected from server');
     showNotification('Lost connection to server. Attempting to reconnect...', 'error');
+    
+    // Show reconnection message
+    const reconnectNotification = document.getElementById('reconnect-notification');
+    if (reconnectNotification) {
+        reconnectNotification.style.display = 'block';
+    }
 });
 
 socket.on('reconnect', () => {
+    console.log('Reconnected to server');
     showNotification('Reconnected to server', 'success');
+    
+    // Hide reconnection message
+    const reconnectNotification = document.getElementById('reconnect-notification');
+    if (reconnectNotification) {
+        reconnectNotification.style.display = 'none';
+    }
+    
+    // Request fresh data
     socket.emit('get_slots');
 });
 
-// Event listeners for booking section
+// Add code to inject a reconnection notification at the top of the page
 document.addEventListener('DOMContentLoaded', () => {
+    // Create reconnection notification element
+    const reconnectNotification = document.createElement('div');
+    reconnectNotification.id = 'reconnect-notification';
+    reconnectNotification.className = 'notification error';
+    reconnectNotification.textContent = 'Lost connection to server. Attempting to reconnect...';
+    reconnectNotification.style.display = 'none';
+    reconnectNotification.style.position = 'fixed';
+    reconnectNotification.style.top = '10px';
+    reconnectNotification.style.left = '50%';
+    reconnectNotification.style.transform = 'translateX(-50%)';
+    reconnectNotification.style.zIndex = '9999';
+    
+    // Add to body
+    document.body.appendChild(reconnectNotification);
+    
+    // Set up button event listeners
     const bookButton = document.getElementById('book-slot-btn');
-    bookButton.addEventListener('click', bookSlot);
+    if (bookButton) {
+        bookButton.addEventListener('click', bookSlot);
+    }
 
     // Additional event listener to update selectedSlot when manually changed
     const slotSelect = document.getElementById('slot-select');
-    slotSelect.addEventListener('change', (event) => {
-        selectedSlot = event.target.value;
-    });
+    if (slotSelect) {
+        slotSelect.addEventListener('change', (event) => {
+            selectedSlot = event.target.value;
+        });
+    }
     
     // Initial fetch of slots
     socket.emit('get_slots');
     
+    // Create a notification container if it doesn't exist
+    if (!document.getElementById('notification')) {
+        const notificationElement = document.createElement('div');
+        notificationElement.id = 'notification';
+        notificationElement.className = 'notification';
+        document.body.appendChild(notificationElement);
+    }
+    
     // Set up periodic refresh to ensure slots are in sync
     setInterval(() => {
-        socket.emit('get_slots');
-    }, 10000); // Refresh every 10 seconds
+        if (socket.connected) {
+            console.log('Periodic refresh: requesting latest slot data');
+            socket.emit('get_slots');
+        }
+    }, 5000); // Refresh every 5 seconds for better responsiveness
 });
