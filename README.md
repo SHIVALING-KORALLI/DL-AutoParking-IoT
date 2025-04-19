@@ -105,7 +105,18 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 
 ## 📜 License
 
-MIT License - See `LICENSE` file for details
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
+
+- ✅ Free to use for learning, research, and academic purposes
+- ❌ Not allowed for commercial use without permission
+- 🧾 Proper credit must always be given to the author
+
+If you want to use this project commercially or include it in larger commercial software, please contact:
+
+**SHIVALING KALLAPPA KORALLI**  
+🔗 [GitHub Profile](https://github.com/SHIVALING-KORALLI)
+
+📄 [Full License Text](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
 
 ## 🤝 Contributions
 
