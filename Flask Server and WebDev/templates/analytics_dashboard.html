@@ -1,0 +1,1012 @@
+<!-- PREVIOUSLY PROPERLY WORKING CODE -->
+
+
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Parking Analytics Dashboard{% endblock %}
+
+{% block extra_css %}
+<style>
+        .dashboard-container {
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-header h2 {
+            margin: 0;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .filter-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end; /* or center if preferred */
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .controls {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            align-items: end; /* aligns buttons with inputs */
+        }
+
+        @media (max-width: 768px) {
+            .form-actions {
+                justify-content: center;
+            }
+        }
+
+        .chart-container {
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Chart Rows for Multiple Charts */
+        .chart-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px; /* Increased from 20px */
+        }
+
+        .chart-half {
+            flex: 1 1 calc(50% - 10px);
+            min-width: 300px;
+        }
+        
+        .summary-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .summary-card h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .summary-card .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .tab-content {
+            margin-top: 20px;
+        }
+        /* Pie Chart Container (Fixed Size) - CORRECTED */
+        .pie-chart-container {
+            position: relative;
+            height: 300px;
+            max-width: 100%;
+            margin: 0 auto 20px; /* Added bottom margin */
+        }
+
+        /* Fix for pie charts to prevent overflow */
+        .pie-chart-container canvas {
+            height: 100% !important;
+            max-height: 280px !important; /* Increased from 260px */
+        }
+
+        /* Prediction Section */
+        .prediction-container {
+            text-align: center;
+            margin-bottom: 40px; /* Increased from 30px */
+        }
+        .prediction-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .prediction-image {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .no-data {
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+            border-radius: .25rem;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        .nav-tabs {
+            margin-bottom: 20px;
+        }
+        /* Add this to your style section */
+        .violation-table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .violation-table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .violation-table-container th,
+        .violation-table-container td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .violation-table-container th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+
+        .violation-table-container tr:hover {
+            background-color: #f5f5f5;
+        }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="dashboard" class="dashboard-container">
+    <div class="dashboard-header">
+        <h2>Parking Analytics Dashboard</h2>
+        <a href="{{ url_for('management_dashboard') }}" class="btn btn-primary back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+    </div>
+
+    <div class="controls">
+        <div class="filter-grid">
+            <div class="form-group">
+                <label for="periodSelect">Time Period:</label>
+                <select id="periodSelect" class="form-control">
+                    <option value="all">All Time</option>
+                    <option value="week">Last Week</option>
+                    <option value="month">Last Month</option>
+                    <option value="year">Last Year</option>
+                    <option value="custom">Custom Range</option>
+                </select>
+            </div>
+    
+            <div class="form-group date-range" style="display:none;">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" class="form-control">
+            </div>
+    
+            <div class="form-group date-range" style="display:none;">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="predictionType">Prediction Type:</label>
+                <select id="predictionType" class="form-control">
+                    <option value="daily">Daily (Next Week)</option>
+                    <option value="weekly">Weekly Pattern</option>
+                    <option value="monthly">Monthly Trend</option>
+                </select>
+            </div>
+    
+            <div class="form-actions">
+                <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">Download PDF Report</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="no-data-message" class="no-data" style="display:none">
+        <p>No parking data available for the selected criteria.</p>
+    </div>
+
+    <!-- Summary Statistics Section -->
+    <div id="summary-section" class="summary-container">
+        <div class="summary-card">
+            <h3>Total Vehicles</h3>
+            <div class="value" id="total-vehicles">{{ stats.total_vehicles|default('0') }}</div>
+        </div>
+        <div class="summary-card">
+            <h3>Unique Vehicles</h3>
+            <div class="value" id="unique-vehicles">{{ stats.unique_vehicles|default('0') }}</div>
+        </div>
+        <div class="summary-card">
+            <h3>Avg. Duration</h3>
+            <div class="value" id="avg-duration">{{ stats.avg_duration_minutes|default('0') }} mins</div>
+        </div>
+        <div class="summary-card">
+            <h3>Peak Hour</h3>
+            <div class="value" id="peak-hour">{{ stats.peak_hour|default('N/A') }}</div>
+        </div>
+        <div class="summary-card">
+            <h3>Most Active Slot</h3>
+            <div class="value" id="most-active-slot">{{ stats.most_active_slot|default('N/A') }}</div>
+        </div>
+    </div>
+
+    <!-- Prediction Section -->
+    <div class="chart-container prediction-container">
+        <h3>Parking Demand Forecast</h3>
+        {% if prediction_image %}
+            <img src="data:image/png;base64,{{ prediction_image }}" alt="Parking Demand Forecast" class="prediction-image">
+            <div class="chart-insight">
+                <i class="fas fa-chart-line"></i>
+                <p>This forecast shows expected parking demand based on historical patterns. Use this to plan staffing and resource allocation.</p>
+            </div>
+        {% elif prediction_error %}
+            <div class="alert alert-warning">{{ prediction_error }}</div>
+        {% else %}
+            <div class="alert alert-info">No prediction data available.</div>
+        {% endif %}
+    </div>
+
+    <!-- Analytics Tabs -->
+    <ul class="nav nav-tabs" id="analyticsTabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="usage-tab" data-toggle="tab" href="#usage" role="tab">Usage Patterns</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="vehicle-tab" data-toggle="tab" href="#vehicle" role="tab">Vehicle Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="client-tab" data-toggle="tab" href="#client" role="tab">Client Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="slot-tab" data-toggle="tab" href="#slot" role="tab">Slot Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="violation-tab" data-toggle="tab" href="#violation" role="tab">Violation Analysis</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content" id="analyticsContent">
+        <!-- Usage Patterns Tab -->
+        <div class="tab-pane fade show active" id="usage" role="tabpanel">
+            <div class="chart-container">
+                <h3>Peak Usage by Hour</h3>
+                <canvas id="peakUsageChart"></canvas>
+                <div class="chart-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p id="peak-usage-insight">This chart shows when your parking facility is busiest throughout the day.</p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Usage by Day of Week</h3>
+                <canvas id="dayOfWeekChart"></canvas>
+                <div class="chart-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p id="day-of-week-insight">This chart reveals which days of the week have the highest parking demand.</p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Parking Duration Distribution</h3>
+                <canvas id="durationChart"></canvas>
+                <div class="chart-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p id="duration-insight">This histogram shows how long vehicles typically stay in your parking facility.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vehicle Analysis Tab -->
+        <div class="tab-pane fade" id="vehicle" role="tabpanel">
+            <div class="chart-row">
+                <div class="chart-container chart-half">
+                    <h3>Vehicle Types</h3>
+                    <div class="pie-chart-container">
+                        <canvas id="vehicleTypeChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <i class="fas fa-info-circle"></i>
+                        <p id="vehicle-type-insight">This chart shows the distribution of different vehicle types using your parking facility.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container chart-half">
+                    <h3>Vehicle Origins</h3>
+                    <canvas id="originChart"></canvas>
+                    <div class="chart-insight">
+                        <i class="fas fa-info-circle"></i>
+                        <p id="origin-insight">This chart displays where vehicles are coming from based on license plate regions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Client Analysis Tab -->
+        <div class="tab-pane fade" id="client" role="tabpanel">
+            <div class="chart-container">
+                <h3>Top Repeat Clients</h3>
+                <canvas id="repeatClientsChart"></canvas>
+                <div class="chart-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p id="repeat-clients-insight">This chart identifies your most frequent visitors by license plate number.</p>
+                </div>
+            </div>
+            
+            <div class="chart-row">
+                <div class="chart-container chart-half">
+                    <h3>Client vs Walk-in</h3>
+                    <div class="pie-chart-container">
+                        <canvas id="clientTypeChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <i class="fas fa-info-circle"></i>
+                        <p id="client-type-insight">This shows the percentage of registered clients versus walk-in customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slot Analysis Tab -->
+        <div class="tab-pane fade" id="slot" role="tabpanel">
+            <div class="chart-container">
+                <h3>Slot Utilization</h3>
+                <canvas id="slotUtilizationChart"></canvas>
+                <div class="chart-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p id="slot-utilization-insight">This chart shows which parking slots are used most frequently.</p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Average Duration by Slot</h3>
+                <canvas id="slotDurationChart"></canvas>
+                <div class="chart-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p id="slot-duration-insight">This chart shows the average parking duration for each slot.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Violation Analysis Tab -->
+        <div class="tab-pane fade" id="violation" role="tabpanel">
+            <div class="chart-row">
+                <div class="chart-container chart-half">
+                    <h3>Top Violators</h3>
+                    <canvas id="topViolatorsChart"></canvas>
+                    <div class="chart-insight">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p id="top-violators-insight">This chart shows clients with the most parking violations.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container chart-half">
+                    <h3>Violations by Time of Day</h3>
+                    <div class="pie-chart-container">
+                        <canvas id="violationTimeChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p id="violation-time-insight">This chart shows when violations most commonly occur.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Recent Violations</h3>
+                <div class="violation-table-container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Client Name</th>
+                                <th>Plate Number</th>
+                                <th>Violation Count</th>
+                                <th>Last Violation</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="violations-table-body">
+                            {% if violations %}
+                                {% for violation in violations %}
+                                <tr>
+                                    <td>{{ violation.client_name }}</td>
+                                    <td>{{ violation.plate_number }}</td>
+                                    <td>{{ violation.violation_count }}</td>
+                                    <td>{{ violation.last_violation }}</td>
+                                    <td>{{ violation.common_violation }}</td>
+                                </tr>
+                                {% endfor %}
+                            {% else %}
+                                <tr><td colspan="5">No violation data available</td></tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="chart-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p>This table lists all recent parking violations in the system.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    // Get the data from the server
+var rawData;
+var violationData;
+try {
+    // Initialize with data from template or empty array if none
+    rawData = {% if data %}{{ data | tojson | safe }}{% else %}[]{% endif %};
+    violationData = {% if violations %}{{ violations | tojson | safe }}{% else %}[]{% endif %};
+} catch (e) {
+    console.error("Error parsing data:", e);
+    rawData = [];
+    violationData = [];
+}
+    
+let charts = {}; // Store chart instances for updating
+
+// Parse date strings to Date objects
+const parsedData = rawData.map(row => {
+    return {
+        ...row,
+        entry_time: row.entry_time ? new Date(row.entry_time) : null,
+        exit_time: row.exit_time ? new Date(row.exit_time) : null,
+        duration_minutes: parseFloat(row.duration_minutes) || 0
+    };
+});
+
+// Parse violation data dates
+const parsedViolations = violationData.map(violation => {
+    return {
+        ...violation,
+        last_violation: violation.last_violation ? new Date(violation.last_violation) : null
+    };
+});
+
+function renderCharts(data) {
+    // Clear previous charts
+    Object.values(charts).forEach(chart => chart.destroy());
+    charts = {};
+    
+    // Show/hide no data message
+    const noDataMsg = document.getElementById('no-data-message');
+    const analyticsContent = document.getElementById('analyticsContent');
+    const summarySection = document.getElementById('summary-section');
+    
+    if (!data || data.length === 0) {
+        noDataMsg.style.display = 'block';
+        analyticsContent.style.display = 'none';
+        summarySection.style.display = 'none';
+        return;
+    } else {
+        noDataMsg.style.display = 'none';
+        analyticsContent.style.display = 'block';
+        summarySection.style.display = 'flex';
+    }
+
+    // Prepare data for charts
+    // 1. Usage Patterns
+    const hours = Array(24).fill(0);
+    const daysOfWeek = Array(7).fill(0);
+    const durations = [];
+    
+    // 2. Vehicle Analysis
+    const vehicleCounts = {};
+    const vehicleOrigins = {};
+    
+    // 3. Client Analysis
+    const repeatClients = {};
+    const clientTypes = {'Client': 0, 'Walk-in': 0};
+    
+    // 4. Slot Analysis
+    const slotUsage = {};
+    const slotDurations = {};
+    const slotDurationCounts = {};
+
+    const violators = {};
+    const violationTimes = {
+        'Morning (6am-12pm)': 0,
+        'Afternoon (12pm-6pm)': 0,
+        'Evening (6pm-12am)': 0,
+        'Night (12am-6am)': 0
+    };
+
+    data.forEach(record => {
+        if (record.entry_time) {
+            const hour = record.entry_time.getHours();
+            hours[hour]++;
+            
+            const dayOfWeek = record.entry_time.getDay();
+            daysOfWeek[dayOfWeek]++;
+        }
+
+        if (record.vehicle_type) {
+            vehicleCounts[record.vehicle_type] = (vehicleCounts[record.vehicle_type] || 0) + 1;
+        }
+
+        if (record.plate_number) {
+            const key = record.plate_number;
+            repeatClients[key] = (repeatClients[key] || 0) + 1;
+            
+            // Extract origin from plate (e.g., KA 01)
+            const plateParts = record.plate_number.split(' ');
+            if (plateParts.length > 1) {
+                const origin = plateParts[0] + ' ' + plateParts[1];
+                vehicleOrigins[origin] = (vehicleOrigins[origin] || 0) + 1;
+            }
+        }
+
+        if (record.client_name) {
+            if (record.client_name.toLowerCase() !== 'unknown') {
+                clientTypes['Client']++;
+            } else {
+                clientTypes['Walk-in']++;
+            }
+        }
+
+        if (record.slot_id) {
+            const slot = record.slot_id;
+            slotUsage[slot] = (slotUsage[slot] || 0) + 1;
+            
+            if (record.duration_minutes) {
+                if (!slotDurations[slot]) slotDurations[slot] = 0;
+                if (!slotDurationCounts[slot]) slotDurationCounts[slot] = 0;
+                
+                slotDurations[slot] += record.duration_minutes;
+                slotDurationCounts[slot]++;
+            }
+        }
+
+        if (record.duration_minutes) {
+            durations.push(record.duration_minutes);
+        }
+    });
+    
+    // Process violation data
+    parsedViolations.forEach(violation => {
+        // Count violations by client
+        if (violation.plate_number) {
+            // Make sure to properly parse the violation count
+            violators[violation.plate_number] = {
+                count: parseInt(violation.violation_count) || 1,
+                name: violation.client_name || "Unknown"
+            };
+        }
+        
+        // Count violations by time of day
+        if (violation.last_violation) {
+            const hour = violation.last_violation.getHours();
+            
+            if (hour >= 6 && hour < 12) {
+                violationTimes['Morning (6am-12pm)']++;
+            } else if (hour >= 12 && hour < 18) {
+                violationTimes['Afternoon (12pm-6pm)']++;
+            } else if (hour >= 18 && hour < 24) {
+                violationTimes['Evening (6pm-12am)']++;
+            } else {
+                violationTimes['Night (12am-6am)']++;
+            }
+        }
+    });
+    
+    // Calculate average durations per slot
+    const avgSlotDurations = {};
+    for (const slot in slotDurations) {
+        if (slotDurationCounts[slot] > 0) {
+            avgSlotDurations[slot] = slotDurations[slot] / slotDurationCounts[slot];
+        }
+    }
+
+    // Update summary stats
+    document.getElementById('total-vehicles').textContent = data.length;
+    document.getElementById('unique-vehicles').textContent = Object.keys(repeatClients).length;
+    
+    const avgDuration = durations.length > 0 ? 
+        Math.round(durations.reduce((a, b) => a + b, 0) / durations.length) : 0;
+    document.getElementById('avg-duration').textContent = avgDuration + ' mins';
+    
+    // Find peak hour
+    const peakHourIndex = hours.indexOf(Math.max(...hours));
+    document.getElementById('peak-hour').textContent = 
+        peakHourIndex + ':00-' + (peakHourIndex+1) + ':00';
+    
+    // Find most active slot
+    let mostActiveSlot = 'N/A';
+    let maxUsage = 0;
+    for (const slot in slotUsage) {
+        if (slotUsage[slot] > maxUsage) {
+            maxUsage = slotUsage[slot];
+            mostActiveSlot = slot;
+        }
+    }
+    document.getElementById('most-active-slot').textContent = mostActiveSlot;
+
+    // Create the charts
+    // 1. Usage Patterns
+    charts.peakUsage = createBarChart('peakUsageChart', 'Peak Usage by Hour', 
+        Array.from({length: 24}, (_, i) => i.toString() + ':00'), hours);
+    
+    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    charts.dayOfWeek = createBarChart('dayOfWeekChart', 'Usage by Day of Week', 
+        dayNames, daysOfWeek);
+    
+    charts.duration = createHistogram('durationChart', 'Parking Duration', durations);
+    
+    // 2. Vehicle Analysis
+    charts.vehicleType = createPieChart('vehicleTypeChart', 'Vehicle Types', vehicleCounts);
+    
+    // Sort vehicle origins by count
+    const sortedOrigins = Object.entries(vehicleOrigins)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    charts.origin = createBarChart('originChart', 'Top Vehicle Origins', 
+        sortedOrigins.map(item => item[0]), sortedOrigins.map(item => item[1]));
+    
+    // 3. Client Analysis
+    // Filter to only show clients who have visited more than once
+    const repeaters = Object.entries(repeatClients)
+        .filter(([_, v]) => v > 1)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10); // Top 10
+    
+    charts.repeatClients = createBarChart('repeatClientsChart', 'Top Repeat Clients', 
+        repeaters.map(item => item[0]), repeaters.map(item => item[1]));
+    
+    charts.clientType = createPieChart('clientTypeChart', 'Client vs Walk-in', clientTypes);
+    
+    // 4. Slot Analysis
+    charts.slotUsage = createBarChart('slotUtilizationChart', 'Slot Utilization', 
+        Object.keys(slotUsage), Object.values(slotUsage));
+    
+    charts.slotDuration = createBarChart('slotDurationChart', 'Average Duration by Slot (mins)', 
+        Object.keys(avgSlotDurations), Object.values(avgSlotDurations).map(v => Math.round(v)));
+    
+    // 5. Violation Analysis
+    // Sort top violators
+    const topViolators = Object.entries(violators)
+        .sort((a, b) => b[1].count - a[1].count)
+        .slice(0, 10); // Top 10
+    
+    charts.topViolators = createBarChart('topViolatorsChart', 'Top Violators', 
+        topViolators.map(item => item[0]), //Plate number
+        topViolators.map(item => item[1].count), //Violation count
+        'rgba(255, 99, 132, 0.6)', 'rgba(255, 99, 132, 1)');
+    
+    charts.violationTime = createPieChart('violationTimeChart', 'Violations by Time of Day', violationTimes);
+    
+    // Generate violation insights
+    if (topViolators.length > 0) {
+        const topViolator = topViolators[0];
+        const violatorName = topViolator[1].name !== "Unknown" ? topViolator[1].name : topViolator[0];
+        document.getElementById('top-violators-insight').textContent = 
+            `${violatorName} has the most violations (${topViolator[1].count}). Consider implementing stricter enforcement.`;
+    }
+    
+    // Find the time period with most violations
+    let maxTime = '';
+    let maxCount = 0;
+    for (const time in violationTimes) {
+        if (violationTimes[time] > maxCount) {
+            maxCount = violationTimes[time];
+            maxTime = time;
+        }
+    }
+    if (maxTime) {
+        document.getElementById('violation-time-insight').textContent = 
+            `Most violations occur during ${maxTime}. Consider increasing surveillance during this time.`;
+    }
+    
+    // Update violation table if no server-side data is provided
+    if (parsedViolations.length === 0) {
+        const tbody = document.getElementById('violations-table-body');
+        tbody.innerHTML = '<tr><td colspan="5">No violation data available</td></tr>';
+    }
+}
+
+function createBarChart(id, label, labels, data, bgColor = 'rgba(54, 162, 235, 0.6)', borderColor = 'rgba(54, 162, 235, 1)') {
+    const ctx = document.getElementById(id);
+    if (!ctx) return null;
+    
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: label,
+                data: data,
+                backgroundColor: bgColor,
+                borderColor: borderColor,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    return chart;
+}
+
+function createPieChart(id, label, dataObj) {
+    const ctx = document.getElementById(id);
+    if (!ctx || Object.keys(dataObj).length === 0) return null;
+    
+    const chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(dataObj),
+            datasets: [{
+                label: label,
+                data: Object.values(dataObj),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+    return chart;
+}
+
+function createHistogram(id, label, data) {
+    const ctx = document.getElementById(id);
+    if (!ctx || data.length === 0) return null;
+    
+    const max = Math.max(...data);
+    const binSize = Math.ceil(max / 10) || 30; // Default to 30 mins if data is empty
+    const bins = Array(10).fill(0);
+    
+    data.forEach(value => {
+        const index = Math.min(Math.floor(value / binSize), 9);
+        bins[index]++;
+    });
+    
+    const labels = bins.map((_, i) => {
+        const start = i * binSize;
+        const end = (i + 1) * binSize;
+        return `${start}-${end}`;
+    });
+    
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Number of Vehicles',
+                data: bins,
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Duration (minutes)'
+                    }
+                }
+            }
+        }
+    });
+    return chart;
+}
+
+// Function to handle recording new violations
+function recordViolation(plateNumber) {
+    if (!plateNumber) {
+        alert('Please enter a plate number');
+        return;
+    }
+    
+    fetch('/record_violation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ plate_number: plateNumber }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(`Violation recorded. New violation count: ${data.new_count}`);
+            // Refresh the page to update the data
+            window.location.reload();
+        } else {
+            alert(`Error: ${data.message}`);
+        }
+    })
+    .catch(error => {
+        console.error('Error recording violation:', error);
+        alert('An error occurred while recording the violation.');
+    });
+}
+
+// Initialize charts with existing data
+document.addEventListener('DOMContentLoaded', function() {
+    renderCharts(parsedData);
+    
+    // Show/hide date range fields based on period selection
+    document.getElementById('periodSelect').addEventListener('change', function() {
+        const dateRangeFields = document.querySelectorAll('.date-range');
+        if (this.value === 'custom') {
+            dateRangeFields.forEach(field => field.style.display = 'block');
+        } else {
+            dateRangeFields.forEach(field => field.style.display = 'none');
+        }
+    });
+    
+    // Apply filters button
+    document.getElementById('applyFilters').addEventListener('click', function() {
+        const period = document.getElementById('periodSelect').value;
+        const predictionType = document.getElementById('predictionType').value;
+        let url = `/analytics?period=${period}&prediction=${predictionType}`;
+        
+        if (period === 'custom') {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            if (startDate) url += `&start_date=${startDate}`;
+            if (endDate) url += `&end_date=${endDate}`;
+        }
+        
+        window.location.href = url;
+    });
+    
+    // Add event listeners for violation tab functionality
+    const violationTab = document.getElementById('violation-tab');
+    if (violationTab) {
+        violationTab.addEventListener('click', function() {
+            // If we add any dynamic functionality specific to the violation tab
+            console.log('Violation tab clicked');
+        });
+    }
+    
+    // Add button for recording new violations if it exists
+    const recordViolationBtn = document.getElementById('record-violation-btn');
+    if (recordViolationBtn) {
+        recordViolationBtn.addEventListener('click', function() {
+            const plateNumber = document.getElementById('violation-plate-number').value;
+            recordViolation(plateNumber);
+        });
+    }
+});
+
+// PDF Generation function
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('portrait', 'mm', 'a4');
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    
+    // Add title
+    doc.setFontSize(18);
+    doc.text('Parking Analytics Report', pageWidth/2, 15, { align: 'center' });
+    doc.setFontSize(12);
+    
+    // Add date
+    const today = new Date();
+    doc.text(`Generated: ${today.toLocaleDateString()}`, pageWidth/2, 25, { align: 'center' });
+    
+    // Add summary stats
+    doc.setFontSize(14);
+    doc.text('Summary Statistics', 20, 40);
+    
+    doc.setFontSize(10);
+    doc.text(`Total Vehicles: ${document.getElementById('total-vehicles').textContent}`, 20, 50);
+    doc.text(`Unique Vehicles: ${document.getElementById('unique-vehicles').textContent}`, 20, 55);
+    doc.text(`Avg. Duration: ${document.getElementById('avg-duration').textContent}`, 20, 60);
+    doc.text(`Peak Hour: ${document.getElementById('peak-hour').textContent}`, 20, 65);
+    doc.text(`Most Active Slot: ${document.getElementById('most-active-slot').textContent}`, 20, 70);
+    
+    // Add violation summary if available
+    if (parsedViolations && parsedViolations.length > 0) {
+        doc.text(`Total Violations: ${parsedViolations.length}`, 20, 75);
+    }
+    
+    // Add prediction image if available
+    const predictionImg = document.querySelector('.prediction-image');
+    if (predictionImg) {
+        doc.addPage();
+        doc.setFontSize(14);
+        doc.text('Parking Demand Forecast', pageWidth/2, 20, { align: 'center' });
+        doc.addImage(predictionImg.src, 'PNG', 20, 30, 170, 100);
+    }
+    
+    // Add charts from tabs
+    const chartCanvases = document.querySelectorAll('canvas');
+    let pageCount = predictionImg ? 2 : 1;
+    
+    // Process each chart on its own page to prevent overlapping
+    chartCanvases.forEach((canvas, index) => {
+        doc.addPage();
+        pageCount++;
+        
+        // Get chart title
+        const chartTitle = canvas.closest('.chart-container').querySelector('h3').textContent;
+        doc.setFontSize(14);
+        doc.text(chartTitle, pageWidth/2, 20, { align: 'center' });
+        
+        // Add chart image
+        const imgData = canvas.toDataURL('image/png');
+        doc.addImage(imgData, 'PNG', 20, 30, 170, 100);
+        
+        // Add caption if available
+        const insight = canvas.closest('.chart-container').querySelector('.chart-insight p');
+        if (insight) {
+            doc.setFontSize(10);
+            doc.text(insight.textContent, 20, 140, { 
+                maxWidth: 170,
+                align: 'left' 
+            });
+        }
+    });
+    
+    // Save PDF
+    doc.save('parking-analytics-report.pdf');
+}
+</script>
+{% endblock %}

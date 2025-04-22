@@ -16,6 +16,19 @@ from threading import Lock
 import shutil
 import logging
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_file
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_file
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+import glob
+import os
+from statsmodels.tsa.arima.model import ARIMA
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
+import io
+import base64
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_very_secret_key_here'
@@ -57,10 +70,63 @@ def create_xml_if_not_exists():
         tree.write(xml_file, encoding="utf-8", xml_declaration=True)
 
 def parse_timestamp(timestamp_str):
+    """Parse timestamp string to datetime object"""
+    if not timestamp_str:
+        return None
     try:
         return datetime.strptime(timestamp_str, '%Y-%m-%d %H:%M:%S')
     except ValueError:
-        return None
+        try:
+            return datetime.strptime(timestamp_str, '%Y-%m-%dT%H:%M:%S')
+        except ValueError:
+            return None
+
+def parse_all_xml_data():
+    """Parse all available XML files and return as pandas DataFrame"""
+    all_data = []
+    xml_files = glob.glob(os.path.join(XML_FOLDER, "*.xml"))
+    
+    if not xml_files:
+        logger.warning(f"No XML files found in {XML_FOLDER}")
+        return pd.DataFrame()
+        
+    for file_path in xml_files:
+        try:
+            logger.info(f"Parsing XML file: {file_path}")
+            tree = ET.parse(file_path)
+            root = tree.getroot()
+            
+            for slot in root.findall("./Slot"):
+                record = slot.attrib.copy()
+                
+                # Parse timestamps
+                entry_time = parse_timestamp(record.get('entry_time', ''))
+                exit_time = parse_timestamp(record.get('exit_time', ''))
+                
+                # Add parsed fields
+                record['entry_time'] = entry_time
+                record['exit_time'] = exit_time
+                record['slot_id'] = record.get('id', '')
+                record['date'] = entry_time.date() if entry_time else None
+                
+                # Calculate duration if both times are available
+                if entry_time and exit_time:
+                    duration = (exit_time - entry_time).total_seconds() / 60
+                    record['duration_minutes'] = duration
+                else:
+                    record['duration_minutes'] = None
+                    
+                all_data.append(record)
+        except Exception as e:
+            logger.error(f"Failed to parse {file_path}: {e}")
+    
+    if not all_data:
+        logger.warning("No data extracted from XML files")
+        return pd.DataFrame()
+        
+    df = pd.DataFrame(all_data)
+    logger.info(f"Successfully parsed {len(df)} parking records")
+    return df
 
 def is_duplicate_entry(last_slot, new_timestamp, time_threshold_seconds=60):
     """
@@ -302,6 +368,29 @@ def check_and_reset_incidents(user):
             user.last_incident_reset = datetime.now()
             db.session.commit()
             logger.info(f"Reset parking incidents for user {user.name}")
+
+# Add this new function to retrieve violation data from the User model
+def get_violation_data():
+    """Get violation data from Users table"""
+    try:
+        # Query all users with at least one parking incident
+        violators = User.query.filter(User.parking_incidents > 0).all()
+        
+        violation_data = []
+        for user in violators:
+            violation_data.append({
+                'client_name': user.name,
+                'plate_number': user.number_plate,
+                'violation_count': user.parking_incidents,
+                'last_violation': user.last_incident_reset.strftime("%Y-%m-%d %H:%M") if user.last_incident_reset else "Unknown",
+                'common_violation': "Parking Violation",  # You can add more specific violation types if you track them
+                'violation_time': user.last_incident_reset  # For time-based analytics
+            })
+        
+        return violation_data
+    except Exception as e:
+        logger.error(f"Error retrieving violation data: {e}")
+        return []
 
 def get_slot_by_plate(plate_number):
     """Find slot where a specific plate number is parked"""
@@ -546,6 +635,132 @@ def auto_release_spots():
                 import traceback
                 logger.error(traceback.format_exc())
                 continue
+
+def generate_predictions(df, prediction_type='daily'):
+    """Generate predictions based on historical data"""
+    if df.empty:
+        return None, "No data available for predictions"
+    
+    try:
+        # Prepare time series data
+        if 'entry_time' not in df.columns:
+            return None, "Entry time data not available"
+            
+        # Make sure entry_time is datetime
+        df['entry_time'] = pd.to_datetime(df['entry_time'])
+        
+        # Group by day and count entries
+        daily_counts = df.groupby(df['entry_time'].dt.date).size()
+        daily_counts.index = pd.to_datetime(daily_counts.index)
+        daily_counts = daily_counts.sort_index()
+        
+        if len(daily_counts) < 7:  # Need at least a week of data
+            return None, "Not enough historical data for prediction"
+            
+        # For weekly prediction
+        if prediction_type == 'weekly':
+            # Get day of week pattern
+            day_of_week = daily_counts.groupby(daily_counts.index.dayofweek).mean()
+            
+            # Create next 7 days prediction
+            next_7_days = pd.date_range(start=daily_counts.index[-1] + timedelta(days=1), periods=7)
+            forecast = pd.Series(index=next_7_days, data=[day_of_week[d.dayofweek] for d in next_7_days])
+            
+        # For monthly trend
+        elif prediction_type == 'monthly':
+            # Use linear regression for trend
+            X = np.array(range(len(daily_counts))).reshape(-1, 1)
+            y = daily_counts.values
+            model = LinearRegression()
+            model.fit(X, y)
+            
+            # Predict next 30 days
+            X_pred = np.array(range(len(daily_counts), len(daily_counts) + 30)).reshape(-1, 1)
+            y_pred = model.predict(X_pred)
+            next_30_days = pd.date_range(start=daily_counts.index[-1] + timedelta(days=1), periods=30)
+            forecast = pd.Series(index=next_30_days, data=y_pred)
+        
+        # For daily prediction (default)
+        else:
+            # Use last 14 days for ARIMA model
+            recent_data = daily_counts[-14:]
+            
+            # Train ARIMA model
+            model = ARIMA(recent_data, order=(1, 1, 1))
+            model_fit = model.fit()
+            
+            # Forecast next 7 days
+            forecast = model_fit.forecast(steps=7)
+            
+        # Generate plot
+        plt.figure(figsize=(10, 6))
+        plt.plot(daily_counts.index[-14:], daily_counts[-14:], label='Historical')
+        plt.plot(forecast.index, forecast, label='Forecast', linestyle='--')
+        plt.title(f'Parking Demand Forecast ({prediction_type.capitalize()})')
+        plt.xlabel('Date')
+        plt.ylabel('Number of Vehicles')
+        plt.legend()
+        plt.grid(True, linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        
+        # Convert plot to base64 for displaying in HTML
+        buffer = io.BytesIO()
+        plt.savefig(buffer, format='png')
+        buffer.seek(0)
+        image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+        plt.close()
+        
+        return image_base64, None
+        
+    except Exception as e:
+        logger.error(f"Prediction error: {e}")
+        return None, f"Error generating prediction: {str(e)}"
+
+def generate_summary_stats(df):
+    """Generate summary statistics from parking data"""
+    if df.empty:
+        return {}
+        
+    try:
+        stats = {}
+        
+        # Count total records
+        stats['total_vehicles'] = len(df)
+        
+        # Unique vehicles
+        if 'plate_number' in df.columns:
+            stats['unique_vehicles'] = df['plate_number'].nunique()
+        
+        # Average duration
+        if 'duration_minutes' in df.columns:
+            valid_durations = df['duration_minutes'].dropna()
+            if not valid_durations.empty:
+                stats['avg_duration_minutes'] = round(valid_durations.mean(), 1)
+                stats['max_duration_minutes'] = round(valid_durations.max(), 1)
+        
+        # Most common vehicle type
+        if 'vehicle_type' in df.columns and not df['vehicle_type'].empty:
+            vehicle_counts = df['vehicle_type'].value_counts()
+            stats['most_common_vehicle'] = vehicle_counts.index[0]
+            stats['most_common_vehicle_count'] = int(vehicle_counts.iloc[0])
+        
+        # Most active slot
+        if 'slot_id' in df.columns:
+            slot_counts = df['slot_id'].value_counts()
+            stats['most_active_slot'] = slot_counts.index[0]
+            stats['most_active_slot_count'] = int(slot_counts.iloc[0])
+        
+        # Peak hour
+        if 'entry_time' in df.columns:
+            hours = df['entry_time'].dt.hour.value_counts()
+            stats['peak_hour'] = int(hours.index[0])
+            stats['peak_hour_count'] = int(hours.iloc[0])
+            
+        return stats
+        
+    except Exception as e:
+        logger.error(f"Error generating summary stats: {e}")
+        return {}
 
 # Additional Socket.IO event handler to handle explicit requests for slot updates
 @socketio.on('get_slots')
@@ -803,6 +1018,109 @@ def login():
             return jsonify({"success": False, "message": "User not found"})
     
     return render_template('login.html')
+
+@app.route('/analytics', methods=['GET'])
+@role_required(['management'])
+def analytics_dashboard():
+    try:
+        # Parse filter parameters
+        time_period = request.args.get('period', 'all')  # all, week, month, year
+        start_date = request.args.get('start_date')
+        end_date = request.args.get('end_date')
+        prediction_type = request.args.get('prediction', 'daily')  # daily, weekly, monthly
+        
+        # Parse all XML data
+        df = parse_all_xml_data()
+        
+        if df.empty:
+            logger.warning("No data found in XML files")
+            return render_template("analytics_dashboard.html", data=[], 
+                                  stats={}, 
+                                  prediction_image=None,
+                                  prediction_error="No data available",
+                                  violations=[])
+        
+        # Apply date filters if specified
+        if start_date:
+            start_date = datetime.strptime(start_date, '%Y-%m-%d').date()
+            df = df[df['entry_time'].dt.date >= start_date]
+            
+        if end_date:
+            end_date = datetime.strptime(end_date, '%Y-%m-%d').date()
+            df = df[df['entry_time'].dt.date <= end_date]
+        
+        # Apply time period filter
+        today = datetime.now().date()
+        if time_period == 'week':
+            df = df[df['entry_time'].dt.date >= (today - timedelta(days=7))]
+        elif time_period == 'month':
+            df = df[df['entry_time'].dt.date >= (today - timedelta(days=30))]
+        elif time_period == 'year':
+            df = df[df['entry_time'].dt.date >= (today - timedelta(days=365))]
+        
+        # Generate prediction
+        prediction_image, prediction_error = generate_predictions(df, prediction_type)
+        
+        # Generate summary statistics
+        summary_stats = generate_summary_stats(df)
+
+        # Get violation data
+        violations = get_violation_data()
+        
+        # Convert timestamps to strings for JSON serialization
+        for col in ['entry_time', 'exit_time']:
+            if col in df.columns:
+                df[col] = df[col].astype(str)
+        
+        return render_template("analytics_dashboard.html", 
+                              data=df.to_dict(orient='records'),
+                              stats=summary_stats,
+                              prediction_image=prediction_image,
+                              prediction_error=prediction_error,
+                              violations=violations)
+                              
+    except Exception as e:
+        logger.error(f"Analytics dashboard error: {e}")
+        return render_template("error.html", 
+                              message=f"Error generating analytics: {str(e)}")
+
+# Add a new route to handle parking violations
+@app.route('/record_violation', methods=['POST'])
+@role_required(['management'])
+def record_violation():
+    try:
+        data = request.get_json()
+        plate_number = data.get('plate_number')
+        
+        if not plate_number:
+            return jsonify({"success": False, "message": "Plate number is required"}), 400
+            
+        # Find user by plate number
+        user = User.query.filter_by(number_plate=plate_number).first()
+        
+        if not user:
+            return jsonify({"success": False, "message": "No user found with this plate number"}), 404
+            
+        # Update violation count
+        user.parking_incidents += 1
+        user.last_incident_reset = datetime.now()
+        db.session.commit()
+        
+        # Notify user if violation count exceeds threshold
+        if user.parking_incidents >= 3:
+            try:
+                message = f"Warning: You have {user.parking_incidents} parking violations. Please contact management."
+                send_sms(user.phone_number, message)
+            except Exception as sms_error:
+                logger.error(f"Failed to send violation SMS: {sms_error}")
+        
+        return jsonify({"success": True, "new_count": user.parking_incidents})
+        
+    except Exception as e:
+        db.session.rollback()
+        logger.error(f"Error recording violation: {e}")
+        return jsonify({"success": False, "message": str(e)}), 500
+
 
 @app.route('/manage_users', methods=['GET', 'POST', 'DELETE'])
 @role_required(['management'])

@@ -75,7 +75,8 @@ body {
 
 .btn-logout,
 .btn-manage-users,
-.btn-view-history {
+.btn-view-history,
+.btn-analytics {
     background: rgba(255, 255, 255, 0.15);
     color: white;
     padding: 8px 20px;
