@@ -14,6 +14,8 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 - **SMS Notifications**: Real-time alerts via Twilio
 - **Hardware Integration**: NodeMCU control for slot indicators
 - **Web Dashboard**: User-friendly interface for parking management
+- **Web Dashboard**: User-friendly interface for parking management  
+- **Data Analytics & Forecasting**: Utilize historical parking data for analytical insights and future parking demand predictions.  
 
 ## 🚀 Tech Stack
 
