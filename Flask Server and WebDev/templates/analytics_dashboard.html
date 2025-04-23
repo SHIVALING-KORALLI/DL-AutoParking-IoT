@@ -90,31 +90,44 @@
             min-width: 300px;
         }
         
-        .summary-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .summary-card {
-            flex: 1;
-            min-width: 200px;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .summary-card h3 {
-            margin-top: 0;
-            font-size: 16px;
-            color: #555;
-        }
-        .summary-card .value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #007bff;
-        }
+        /* Summary Cards */
+.summary-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 5px solid #3498db;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.summary-card .value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2980b9;
+    margin-top: 10px;
+}
         .tab-content {
             margin-top: 20px;
         }
@@ -147,6 +160,32 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        /* Chart Insights - CORRECTED */
+.chart-insight {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #3498db;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px; /* Added specific margin-top */
+    margin-bottom: 10px;
+    clear: both; /* Ensure it doesn't overlap with charts */
+}
+
+.chart-insight i {
+    color: #3498db;
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.chart-insight p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
         .no-data {
             text-align: center;
             padding: 50px;
@@ -603,32 +642,72 @@ function renderCharts(data) {
         }
     });
     
-    // Process violation data
-    parsedViolations.forEach(violation => {
-        // Count violations by client
-        if (violation.plate_number) {
-            // Make sure to properly parse the violation count
-            violators[violation.plate_number] = {
-                count: parseInt(violation.violation_count) || 1,
-                name: violation.client_name || "Unknown"
-            };
+    // In your renderCharts function, replace the violation analysis section with:
+
+    // Process violation data directly from the server
+    if (parsedViolations.length > 0) {
+        // For top violators chart
+        const sortedViolators = [...parsedViolations]
+            .sort((a, b) => parseInt(b.violation_count) - parseInt(a.violation_count))
+            .slice(0, 10);
+
+        charts.topViolators = createBarChart('topViolatorsChart', 'Top Violators', 
+            sortedViolators.map(item => item.plate_number),
+            sortedViolators.map(item => parseInt(item.violation_count)),
+            'rgba(255, 99, 132, 0.6)', 'rgba(255, 99, 132, 1)');
+        
+        // For violation time chart
+        const timeCategories = {
+            'Morning (6am-12pm)': 0,
+            'Afternoon (12pm-6pm)': 0,
+            'Evening (6pm-12am)': 0,
+            'Night (12am-6am)': 0
+        };
+        
+        parsedViolations.forEach(violation => {
+            if (violation.last_violation) {
+                const hour = violation.last_violation.getHours();
+                
+                if (hour >= 6 && hour < 12) {
+                    timeCategories['Morning (6am-12pm)']++;
+                } else if (hour >= 12 && hour < 18) {
+                    timeCategories['Afternoon (12pm-6pm)']++;
+                } else if (hour >= 18 && hour < 24) {
+                    timeCategories['Evening (6pm-12am)']++;
+                } else {
+                    timeCategories['Night (12am-6am)']++;
+                }
+            }
+        });
+        
+        charts.violationTime = createPieChart('violationTimeChart', 'Violations by Time of Day', timeCategories);
+        
+        // Generate violation insights
+        if (sortedViolators.length > 0) {
+            const topViolator = sortedViolators[0];
+            document.getElementById('top-violators-insight').textContent = 
+                `${topViolator.client_name || topViolator.plate_number} has the most violations (${topViolator.violation_count}). Consider implementing stricter enforcement.`;
         }
         
-        // Count violations by time of day
-        if (violation.last_violation) {
-            const hour = violation.last_violation.getHours();
-            
-            if (hour >= 6 && hour < 12) {
-                violationTimes['Morning (6am-12pm)']++;
-            } else if (hour >= 12 && hour < 18) {
-                violationTimes['Afternoon (12pm-6pm)']++;
-            } else if (hour >= 18 && hour < 24) {
-                violationTimes['Evening (6pm-12am)']++;
-            } else {
-                violationTimes['Night (12am-6am)']++;
+        // Find the time period with most violations
+        let maxTime = '';
+        let maxCount = 0;
+        for (const time in timeCategories) {
+            if (timeCategories[time] > maxCount) {
+                maxCount = timeCategories[time];
+                maxTime = time;
             }
         }
-    });
+        if (maxTime) {
+            document.getElementById('violation-time-insight').textContent = 
+                `Most violations occur during ${maxTime}. Consider increasing surveillance during this time.`;
+        }
+    } else {
+        document.getElementById('top-violators-insight').textContent = 
+            "No violation data available. This chart will show clients with the most parking violations when data is present.";
+        document.getElementById('violation-time-insight').textContent = 
+            "No violation data available. This chart will show when violations most commonly occur.";
+    }
     
     // Calculate average durations per slot
     const avgSlotDurations = {};
@@ -966,6 +1045,8 @@ function downloadPDF() {
     if (parsedViolations && parsedViolations.length > 0) {
         doc.text(`Total Violations: ${parsedViolations.length}`, 20, 75);
     }
+
+
     
     // Add prediction image if available
     const predictionImg = document.querySelector('.prediction-image');
@@ -1004,6 +1085,72 @@ function downloadPDF() {
             });
         }
     });
+    // Add this after the existing charts in the downloadPDF function
+    // Add violation table if available
+    if (parsedViolations && parsedViolations.length > 0) {
+        doc.addPage();
+        doc.setFontSize(14);
+        doc.text('Recent Violations', pageWidth/2, 20, { align: 'center' });
+        
+        // Create table headers
+        const headers = ['Client Name', 'Plate Number', 'Violation Count', 'Last Violation'];
+        const colWidths = [50, 40, 30, 50];
+        let y = 30;
+        
+        // Draw header row
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        let x = 20;
+        headers.forEach((header, i) => {
+            doc.text(header, x, y);
+            x += colWidths[i];
+        });
+        
+        // Draw violation data rows (limit to 20 for space)
+        doc.setFont('helvetica', 'normal');
+        const maxRows = Math.min(parsedViolations.length, 20);
+        for (let i = 0; i < maxRows; i++) {
+            const violation = parsedViolations[i];
+            y += 10;
+            
+            // If we reach bottom of page, create a new page
+            if (y > pageHeight - 20) {
+                doc.addPage();
+                y = 30;
+                
+                // Redraw header on new page
+                x = 20;
+                doc.setFont('helvetica', 'bold');
+                headers.forEach((header, i) => {
+                    doc.text(header, x, y);
+                    x += colWidths[i];
+                });
+                doc.setFont('helvetica', 'normal');
+                y += 10;
+            }
+            
+            // Draw row data
+            x = 20;
+            const rowData = [
+                violation.client_name || 'Unknown',
+                violation.plate_number || 'N/A',
+                violation.violation_count || '0',
+                violation.last_violation instanceof Date ? 
+                    violation.last_violation.toLocaleDateString() : 
+                    (typeof violation.last_violation === 'string' ? violation.last_violation : 'Unknown')
+            ];
+            
+            rowData.forEach((cell, i) => {
+                // Truncate text if too long
+                let displayText = cell.toString();
+                if (displayText.length > 15 && colWidths[i] < 50) {
+                    displayText = displayText.substring(0, 12) + '...';
+                }
+                doc.text(displayText, x, y);
+                x += colWidths[i];
+            });
+        }
+    }
     
     // Save PDF
     doc.save('parking-analytics-report.pdf');
