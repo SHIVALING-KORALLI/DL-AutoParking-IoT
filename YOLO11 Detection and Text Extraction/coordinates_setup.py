@@ -4,6 +4,7 @@ import json
 
 # === Setup Video ===
 cap = cv2.VideoCapture(r'C:\Users\pinky\OneDrive\Documents\Desktop\Detection\Demo_Video.mp4')
+#cap = cv2.VideoCapture(1)
 original_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 original_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 

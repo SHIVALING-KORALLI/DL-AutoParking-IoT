@@ -30,7 +30,7 @@
             display: flex;
             gap: 12px;
             align-items: flex-end;
-            margin-left: auto; 
+            margin-left: auto; /* This will push buttons to the right */
         }
         .controls {
             padding: 20px;
@@ -68,6 +68,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        /* Chart Rows for Multiple Charts */
         .chart-row {
             display: flex;
             flex-wrap: wrap;
@@ -78,6 +79,7 @@
             flex: 1 1 calc(50% - 10px);
             min-width: 300px;
         }
+        /* Summary Cards */
         .summary-container {
             display: flex;
             flex-wrap: wrap;
@@ -114,15 +116,17 @@
         .tab-content {
             margin-top: 20px;
         }
+        /* Pie Chart Container (Fixed Size) - CORRECTED */
         .pie-chart-container {
             position: relative;
             height: 300px;
             max-width: 100%;
-            margin: 0 auto 20px; 
+            margin: 0 auto 20px; /* Added bottom margin */
         }
+        /* Fix for pie charts to prevent overflow */
         .pie-chart-container canvas {
             height: 100% !important;
-            max-height: 280px !important; 
+            max-height: 280px !important; /* Increased from 260px */
         }
         /* Prediction Section */
         .prediction-container {
@@ -139,6 +143,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        /* Chart Insights - CORRECTED */
         .chart-insight {
             background-color: #f8f9fa;
             padding: 15px;
@@ -147,9 +152,10 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin-top: 20px; 
+            margin-top: 20px; /* Added specific margin-top */
             margin-bottom: 10px;
-            clear: both; 
+            clear: both; /* Ensure it doesn't overlap with charts */
+        }
         .chart-insight i {
             color: #3498db;
             font-size: 20px;
@@ -170,9 +176,13 @@
         canvas {
             max-width: 100%;
         }
+        canvas {
+            max-height: 600px; /* or try 250px for even smaller */
+        }
         .nav-tabs {
             margin-bottom: 20px;
         }
+        /* Add this to your style section */
         .violation-table-container {
             width: 100%;
             overflow-x: auto;
@@ -238,7 +248,8 @@
                     <option value="monthly">Monthly Trend</option>
                 </select>
             </div>
-    
+        
+            <!-- ✅ This is the only change -->
             <div class="form-group">
                 <div class="form-actions">
                     <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
@@ -481,6 +492,7 @@
 
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
     // Get the data from the server
@@ -774,15 +786,33 @@ function createBarChart(id, label, labels, data, bgColor = 'rgba(54, 162, 235, 0
         },
         options: {
             responsive: true,
+            layout: {
+                padding: {
+                    top: 20
+                }
+            },
             plugins: {
-                legend: { display: false }
+                legend: { display: false },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    formatter: Math.round,
+                    font: {
+                        weight: 'bold',
+                        size: 10
+                    },
+                    color: '#333',
+                    clamp: true,
+                    clip: false
+                }
             },
             scales: {
                 y: {
                     beginAtZero: true
                 }
             }
-        }
+        },
+        plugins: [ChartDataLabels]
     });
     return chart;
 }
@@ -810,8 +840,20 @@ function createPieChart(id, label, dataObj) {
             }]
         },
         options: {
-            responsive: true
+            responsive: true,
+            plugins: {
+            legend: { display: false },
+            datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: Math.round,
+                font: {
+                    weight: 'bold'
+                }
+            }
         }
+        },
+        plugins: [ChartDataLabels]
     });
     return chart;
 }
@@ -850,7 +892,15 @@ function createHistogram(id, label, data) {
         options: {
             responsive: true,
             plugins: {
-                legend: { display: false }
+                legend: { display: false },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    formatter: Math.round,
+                    font: {
+                        weight: 'bold'
+                    }
+                }
             },
             scales: {
                 y: {
@@ -863,7 +913,8 @@ function createHistogram(id, label, data) {
                     }
                 }
             }
-        }
+        },
+        plugins: [ChartDataLabels]
     });
     return chart;
 }
@@ -1017,6 +1068,7 @@ function downloadPDF() {
         }
     });
 
+    // Add this after the existing charts in the downloadPDF function
     // Add violation table if available
     if (parsedViolations && parsedViolations.length > 0) {
         doc.addPage();

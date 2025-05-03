@@ -29,6 +29,7 @@ import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend
 import io
 import base64
+import time
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_very_secret_key_here'
@@ -54,7 +55,15 @@ XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History"
 os.makedirs(XML_FOLDER, exist_ok=True)
 
 # Set up logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[
+        logging.FileHandler("performance.log"),  # log to file
+        logging.StreamHandler()                 # also print to terminal
+    ]
+)
+
 logger = logging.getLogger(__name__)
 
 xml_lock = Lock()
@@ -322,7 +331,10 @@ class MQTTManager:
             status_data = {slot_id: 1 if details["status"].lower() == "occupied" else 0 
                           for slot_id, details in slots.items()}
             message = json.dumps(status_data)
+            start_mqtt = time.time()
             result = self.client.publish("parking/slots/status", message)
+            end_mqtt = time.time()
+            logger.info(f"[PERF] Slot Status to MQTT: {(end_mqtt - start_mqtt) * 1000:.2f} ms")
             if result.rc == 0:
                 print(f"Published parking status: {message}")
             else:
@@ -798,90 +810,70 @@ def handle_connect():
 
 @socketio.on('frame_and_slots')
 def handle_frame_and_slots(data):
+    import time  # Add this once at the top of your file if not already present
+
+    start_e2e = time.time()  # Start total response timer
+
     global current_frame
     current_frame = data.get('frame')
     slots = data.get('slots', {})
     update_type = data.get('update_type', 'full')
-    
-    # Log the update type
+
     if update_type == 'partial':
         logger.info(f"Received partial update for {len(slots)} slots")
     else:
         logger.info(f"Received full update with {len(slots)} slots")
-    
+
     for slot_id, details in slots.items():
         if slot_id in parking_slots:
-            # Plate number from CV
             plate_number = details.get('plate_number', '')
-            
-            # Get current status and other details
             current_status = parking_slots[slot_id].get('status', 'Free')
             new_status = details.get('status', 'Free')
             current_client_name = parking_slots[slot_id].get('client_name', '')
             current_plate = parking_slots[slot_id].get('plate_number', '')
-            
-            # Check if this is a meaningful update
             is_meaningful_update = False
-            
-            # Status change is meaningful
+
             if current_status != new_status:
                 is_meaningful_update = True
                 logger.info(f"Status change for {slot_id}: {current_status} -> {new_status}")
-                
-                # Critical logic for slot status
                 if current_client_name:
-                    # If there's an active booking
                     current_time = datetime.now()
                     timestamp_str = parking_slots[slot_id].get('timestamp', '')
-                    
                     if timestamp_str:
                         try:
                             slot_time = datetime.fromisoformat(timestamp_str)
                             booking_duration = int(parking_slots[slot_id].get('booking_duration', 3600))
                             time_diff = (current_time - slot_time).total_seconds()
-                            
-                            # If booking has expired AND no vehicle is present, release the slot
                             if time_diff >= booking_duration and new_status == 'Free':
                                 logger.info(f"Slot {slot_id} booking expired and no vehicle present - fully releasing")
-                                parking_slots[slot_id]['status'] = 'Free'
-                                parking_slots[slot_id]['client_name'] = ''
-                                parking_slots[slot_id]['timestamp'] = ''
-                                parking_slots[slot_id]['plate_number'] = ''
-                                parking_slots[slot_id]['vehicle_type'] = ''
+                                parking_slots[slot_id].update({
+                                    'status': 'Free',
+                                    'client_name': '',
+                                    'timestamp': '',
+                                    'plate_number': '',
+                                    'vehicle_type': ''
+                                })
                             elif time_diff < booking_duration:
-                                # Booking still active, preserve status
                                 parking_slots[slot_id]['status'] = current_status
-                            
                         except Exception as e:
                             logger.error(f"Error checking booking status for {slot_id}: {e}")
                 else:
-                    # No active booking, set status normally
                     parking_slots[slot_id]['status'] = new_status
-            
-            # Plate number change is meaningful
+
             if plate_number and plate_number != "Unknown" and current_plate != plate_number:
                 is_meaningful_update = True
                 logger.info(f"Plate change for {slot_id}: {current_plate} -> {plate_number}")
-                
-                # Update the plate number
                 parking_slots[slot_id]['plate_number'] = plate_number
-                
-                # Only update vehicle_type if plate matches booked user
                 if current_client_name:
                     user = User.query.filter_by(name=current_client_name).first()
                     if user and user.number_plate == plate_number:
                         parking_slots[slot_id]['vehicle_type'] = details.get('vehicle_type', '')
-            
-            # Only update XML if meaningful or if this is a full update
+
             if is_meaningful_update or update_type == 'full':
-                # Update timestamp for this meaningful change
                 parking_slots[slot_id]['timestamp'] = datetime.now().isoformat()
-    
-                # Consider updating vehicle_type more broadly when appropriate
                 if details.get('vehicle_type'):
                     parking_slots[slot_id]['vehicle_type'] = details.get('vehicle_type', '')
-    
-                # Update XML with current information
+
                 update_parking_slot_xml(
                     slot_id=slot_id,
                     status=parking_slots[slot_id]['status'],
@@ -891,13 +883,26 @@ def handle_frame_and_slots(data):
                     client_name=parking_slots[slot_id].get('client_name', '')
                 )
 
-    # Always publish to MQTT and emit to clients
+    # Publish to MQTT and measure LED-like action time (as NodeMCU reacts to MQTT)
+    start_led = time.time()
     mqtt_manager.publish_parking_status(parking_slots)
+    end_led = time.time()
+    logger.info(f"[PERF] LED Indicator Response (via MQTT): {(end_led - start_led) * 1000:.2f} ms")
+
+    # Web interface update measurement
+    start_ui = time.time()
     socketio.emit('update_slots_and_frame', {
         'frame': current_frame,
         'slots': parking_slots
     })
     socketio.emit('update_slots_client', {'slots': parking_slots})
+    end_ui = time.time()
+    logger.info(f"[PERF] Web Interface Update: {(end_ui - start_ui) * 1000:.2f} ms")
+
+    # End-to-end time
+    end_e2e = time.time()
+    logger.info(f"[PERF] End-to-End System Response: {(end_e2e - start_e2e) * 1000:.2f} ms")
+
 
 # Login required decorator
 def login_required(f):
