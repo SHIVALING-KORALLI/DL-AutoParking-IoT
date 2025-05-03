@@ -18,7 +18,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 // ---------------------------
 const char* ssid = "svlng"; //change this
 const char* password = "12345678"; //change this
-const char* mqtt_server = "172.20.10.12"; //change this
+const char* mqtt_server = "172.20.10.12"; //change this  
 const int mqtt_port = 1883;
 const char* mqtt_topic = "parking/slots/status";
 

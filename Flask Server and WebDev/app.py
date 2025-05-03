@@ -49,7 +49,8 @@ twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 
 # XML configuration
-XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking_history"
+#XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking_history"
+XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History"
 os.makedirs(XML_FOLDER, exist_ok=True)
 
 # Set up logging

@@ -794,13 +794,14 @@ def processing_thread_function(system, video_source):
 def main():
     try:
         system = ParkingDetectionSystem(
-            model_path=r'C:\Users\pinky\OneDrive\Documents\Desktop\Detection\runs\detect\train\weights\best.pt',
-            coordinates_path=r'C:\Users\pinky\OneDrive\Documents\Desktop\Detection\coordinates.txt'
+            model_path=r'C:\Users\YOLO11 Detection and Text Extraction\yolo11n_model.pt',
+            coordinates_path=r'C:\Users\pinky\OneDrive\Documents\Desktop\Detection\coordinates_Model_Video.txt'
+            #coordinates_path=r'C:\Users\pinky\OneDrive\Documents\Desktop\Detection\live.txt'
         )
 
         # Video source - can be camera index or path
         video_source = r'C:\Users\pinky\OneDrive\Documents\Desktop\Detection\Demo_Video.mp4'
-        # video_source = 0  # For webcam
+        #video_source = 0  # For webcam
         
         # Start the processing thread
         proc_thread = threading.Thread(target=processing_thread_function, 
