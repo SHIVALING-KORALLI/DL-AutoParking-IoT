@@ -1,0 +1,28 @@
+in cmd, 
+
+py -m venv flask
+
+
+.\flask\Scripts\activate
+
+
+pip install -r requirements.txt
+
+
+For detection you can do live feed (camera) or give video input from the link - https://drive.google.com/file/d/12zFnvxbCbG6XQYL2Otb4nhMsEWVMUMb_/view?usp=sharing
+Download the video and place it in the 'YOLO11 Detection and Text Extraction' directory and in detection.py code update its path.
+
+
+py -m app or py app.py
+
+
+You will create the client account and can log in but to go into management page create one management user by running the code, 
+
+py create_admin.py
+
+Where credentials are,
+name="Admin"
+phone_number="1234567890"
+number_plate="ADMIN001"
+
+

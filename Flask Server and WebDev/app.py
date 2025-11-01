@@ -24,8 +24,8 @@ import glob
 import os
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.linear_model import LinearRegression
-import matplotlib.pyplot as plt
 import matplotlib
+import matplotlib.pyplot as plt
 matplotlib.use('Agg')  # Use non-interactive backend
 import io
 import base64
@@ -50,7 +50,7 @@ twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 # XML configuration
 #XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking_history"
-XML_FOLDER = r"C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History"
+XML_FOLDER = r"C:\Users\Public\Documents\DL-AutoParking-IoT-main\Flask Server and WebDev\parking_history"
 os.makedirs(XML_FOLDER, exist_ok=True)
 
 # Set up logging
@@ -481,8 +481,6 @@ def handle_wrong_parking(booked_slot_id, actual_slot_id, user):
         db.session.rollback()
 
 
-
-#app.py
 # Fix the wrong parking check function to only focus on booked slots
 def check_wrong_parking():
     """Check for vehicles parked in wrong slots"""

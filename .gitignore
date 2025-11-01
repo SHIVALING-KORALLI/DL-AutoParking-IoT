@@ -1,0 +1,12 @@
+# Ignore video files
+*.mp4
+*.mov
+*.avi
+
+# You can also ignore a specific directory where videos are stored
+videos/
+
+# Exclude virtual environment
+venv/
+flask/
+yolo/
