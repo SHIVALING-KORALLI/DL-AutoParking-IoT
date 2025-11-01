@@ -1,0 +1,1863 @@
+WARNING:easyocr.easyocr:Using CPU. Note: This module is much faster with a GPU.
+INFO:root:[YOLO] CPU Time: 0.5938 s, Memory: 1018.61 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1149.59 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1163.35 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1163.35 MB
+INFO:root:[YOLO] CPU Time: 0.3438 s, Memory: 1157.75 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1164.53 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1164.54 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1164.54 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1167.04 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1167.05 MB
+INFO:root:[YOLO] CPU Time: 0.0625 s, Memory: 1167.05 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1167.05 MB
+INFO:root:[YOLO] CPU Time: 0.0938 s, Memory: 1165.06 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1152.98 MB
+INFO:root:[OCR] CPU Time: 2.8438 s, Memory: 1240.80 MB
+INFO:root:[Frame Total] CPU Time: 3.0469 s, Memory: 1241.18 MB
+INFO:root:[YOLO] CPU Time: 0.3594 s, Memory: 1219.56 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1221.31 MB
+INFO:root:[Frame Total] CPU Time: 0.3594 s, Memory: 1224.50 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1246.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1246.97 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1246.97 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1224.64 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1226.46 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1229.89 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1246.96 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1223.76 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1227.45 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1244.35 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1245.72 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1246.96 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1246.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1246.97 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1246.97 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1246.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1246.97 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1246.97 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1246.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1246.97 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1246.98 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1246.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1246.98 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1246.98 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1246.99 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1246.99 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1246.99 MB
+INFO:root:[YOLO] CPU Time: 0.1094 s, Memory: 1246.99 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1246.99 MB
+INFO:root:[Frame Total] CPU Time: 0.1094 s, Memory: 1246.99 MB
+INFO:root:[YOLO] CPU Time: 0.1094 s, Memory: 1247.78 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1247.78 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1247.78 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1247.78 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1247.78 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1247.78 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1247.79 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1247.79 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1247.79 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1247.79 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1247.79 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1247.79 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1246.59 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1247.11 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1247.11 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1251.75 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.75 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1251.75 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1252.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.12 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1252.12 MB
+INFO:root:[YOLO] CPU Time: 0.0781 s, Memory: 1252.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.12 MB
+INFO:root:[Frame Total] CPU Time: 0.0781 s, Memory: 1252.12 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1252.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.12 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1252.12 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1252.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.12 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1252.12 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1252.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.51 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1229.93 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1252.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.51 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1252.51 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1252.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.51 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1252.51 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1252.52 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.52 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1252.52 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1252.52 MB
+INFO:root:[OCR] CPU Time: 2.1875 s, Memory: 1257.38 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1257.38 MB
+INFO:root:[Frame Total] CPU Time: 2.3750 s, Memory: 1257.38 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1259.16 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.16 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.16 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1259.16 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1259.16 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.16 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.16 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1259.16 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1259.16 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.16 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.16 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1259.16 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1259.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.89 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1239.63 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1245.29 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1247.29 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1248.54 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1251.97 MB
+INFO:root:[YOLO] CPU Time: 0.1094 s, Memory: 1263.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1263.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1263.97 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1263.97 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1264.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.04 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1264.04 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1241.64 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1243.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1244.52 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1247.77 MB
+INFO:root:[YOLO] CPU Time: 0.3594 s, Memory: 1264.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.04 MB
+INFO:root:[Frame Total] CPU Time: 0.3750 s, Memory: 1264.05 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1264.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.05 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1264.05 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1264.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.05 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1264.05 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1264.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.05 MB
+INFO:root:[OCR] CPU Time: 2.4844 s, Memory: 1264.93 MB
+INFO:root:[Frame Total] CPU Time: 2.7812 s, Memory: 1264.95 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1252.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1255.83 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1259.39 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1265.08 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1265.07 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.07 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.07 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1265.07 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1265.08 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1265.08 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1265.08 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1250.79 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.54 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1253.72 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1256.66 MB
+INFO:root:[YOLO] CPU Time: 0.0781 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.08 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1265.08 MB
+INFO:root:[YOLO] CPU Time: 0.0781 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[Frame Total] CPU Time: 0.0938 s, Memory: 1269.04 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1268.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.05 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1269.05 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1269.04 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1269.04 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.04 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1269.05 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1269.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.05 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1269.05 MB
+INFO:root:[YOLO] CPU Time: 0.0781 s, Memory: 1269.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.05 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1246.58 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1269.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.55 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1269.55 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1269.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.55 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1269.55 MB
+INFO:root:[YOLO] CPU Time: 0.4219 s, Memory: 1269.58 MB
+INFO:root:[OCR] CPU Time: 2.4688 s, Memory: 1272.54 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1272.54 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1272.54 MB
+INFO:root:[Frame Total] CPU Time: 2.9531 s, Memory: 1272.54 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1274.25 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1274.25 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1274.25 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1274.25 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1274.25 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1275.58 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1275.58 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1275.58 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1275.58 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1275.58 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1251.85 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1251.85 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1251.85 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1251.85 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1248.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1250.49 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.44 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1251.85 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1231.30 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1233.18 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1234.24 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1235.12 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1238.24 MB
+INFO:root:[YOLO] CPU Time: 0.3906 s, Memory: 1249.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1250.67 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[Frame Total] CPU Time: 0.4219 s, Memory: 1251.85 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1245.68 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1247.68 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1248.80 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1249.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1251.85 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.85 MB
+INFO:root:[OCR] CPU Time: 2.4219 s, Memory: 1252.23 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1252.23 MB
+INFO:root:[Frame Total] CPU Time: 2.6250 s, Memory: 1252.23 MB
+INFO:root:[YOLO] CPU Time: 0.4062 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.4062 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1234.64 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1236.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1237.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1238.51 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1241.51 MB
+INFO:root:[YOLO] CPU Time: 0.0781 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1094 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.3438 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.3750 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1231.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1232.75 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1233.75 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1237.31 MB
+INFO:root:[YOLO] CPU Time: 0.3438 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.3438 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.0781 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.0781 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.3281 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.22 MB
+INFO:root:[Frame Total] CPU Time: 0.3750 s, Memory: 1254.22 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1248.66 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1250.79 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1251.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1253.16 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1232.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1233.69 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1234.69 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1237.88 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1234.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1236.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1238.01 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1239.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1242.57 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.3281 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.3281 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.0938 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1254.62 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1254.62 MB
+INFO:root:[OCR] CPU Time: 2.9688 s, Memory: 1255.34 MB
+INFO:root:[Frame Total] CPU Time: 3.2188 s, Memory: 1255.34 MB
+INFO:root:[YOLO] CPU Time: 0.0781 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[Frame Total] CPU Time: 0.0938 s, Memory: 1259.36 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1259.36 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1259.36 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1239.71 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1241.58 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1242.64 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1243.71 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1246.71 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1259.36 MB
+INFO:root:[YOLO] CPU Time: 0.3906 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[Frame Total] CPU Time: 0.3906 s, Memory: 1259.36 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1259.36 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.36 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.4062 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.37 MB
+INFO:root:[Frame Total] CPU Time: 0.4062 s, Memory: 1259.37 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1262.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.79 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.92 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1270.04 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1262.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1270.11 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.11 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1283.11 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.15 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1283.15 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.15 MB
+INFO:root:[OCR] CPU Time: 2.8281 s, Memory: 1283.26 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.26 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.26 MB
+INFO:root:[Frame Total] CPU Time: 3.0625 s, Memory: 1283.26 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1285.66 MB
+INFO:root:[OCR] CPU Time: 2.7969 s, Memory: 1285.35 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1285.35 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1285.35 MB
+INFO:root:[Frame Total] CPU Time: 2.9844 s, Memory: 1285.35 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1290.29 MB
+INFO:root:[OCR] CPU Time: 2.1875 s, Memory: 1290.49 MB
+INFO:root:[OCR] CPU Time: 2.6250 s, Memory: 1290.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.45 MB
+INFO:root:[Frame Total] CPU Time: 5.1406 s, Memory: 1290.45 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1290.43 MB
+INFO:root:[OCR] CPU Time: 3.1562 s, Memory: 1280.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1282.18 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.18 MB
+INFO:root:[Frame Total] CPU Time: 3.3750 s, Memory: 1286.18 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1290.43 MB
+INFO:root:[OCR] CPU Time: 2.9375 s, Memory: 1290.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.62 MB
+INFO:root:[Frame Total] CPU Time: 3.1719 s, Memory: 1290.62 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1290.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.43 MB
+INFO:root:[OCR] CPU Time: 3.2812 s, Memory: 1291.21 MB
+INFO:root:[Frame Total] CPU Time: 3.4375 s, Memory: 1291.21 MB
+INFO:root:[YOLO] CPU Time: 0.1094 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1291.22 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1291.22 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1291.22 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1291.22 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1291.22 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1291.22 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.22 MB
+INFO:root:[OCR] CPU Time: 2.0469 s, Memory: 1291.40 MB
+INFO:root:[Frame Total] CPU Time: 2.1719 s, Memory: 1273.77 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1291.39 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1291.39 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.39 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1291.39 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1292.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1292.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1292.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1292.12 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1292.12 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1292.12 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1287.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1289.91 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.91 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.91 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1292.79 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1296.10 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.3594 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.3594 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1296.15 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1288.44 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.63 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1292.69 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1293.44 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.0938 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1296.15 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.14 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1296.14 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.15 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1273.36 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1274.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1275.42 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1278.67 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1296.48 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.48 MB
+INFO:root:[OCR] CPU Time: 2.3438 s, Memory: 1296.63 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.63 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.63 MB
+INFO:root:[Frame Total] CPU Time: 2.5938 s, Memory: 1296.63 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1296.50 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1275.87 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1277.68 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1278.81 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.75 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1280.68 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1283.87 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1296.50 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1277.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1280.88 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1282.00 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.00 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1286.56 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 2.0156 s, Memory: 1296.78 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.78 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.78 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.78 MB
+INFO:root:[Frame Total] CPU Time: 2.2188 s, Memory: 1296.78 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1296.50 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1274.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1277.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1278.70 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1280.82 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1284.20 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.50 MB
+INFO:root:[OCR] CPU Time: 2.8125 s, Memory: 1296.44 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.44 MB
+INFO:root:[Frame Total] CPU Time: 3.0781 s, Memory: 1296.44 MB
+INFO:root:[YOLO] CPU Time: 0.1094 s, Memory: 1296.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.51 MB
+INFO:root:[Frame Total] CPU Time: 0.1094 s, Memory: 1296.51 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1296.51 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1274.54 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1275.72 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1276.72 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1277.66 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1280.91 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1296.45 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1296.45 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1296.45 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.45 MB
+INFO:root:[OCR] CPU Time: 1.8750 s, Memory: 1296.53 MB
+INFO:root:[Frame Total] CPU Time: 2.1094 s, Memory: 1296.53 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1296.95 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1296.94 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.94 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.94 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.94 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.94 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1296.94 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1296.95 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1296.95 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.95 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1296.95 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1296.96 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.96 MB
+INFO:root:[OCR] CPU Time: 2.5156 s, Memory: 1297.61 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.61 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.61 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.61 MB
+INFO:root:[Frame Total] CPU Time: 2.7188 s, Memory: 1297.62 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1298.20 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1298.20 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1298.20 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.20 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1298.20 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1298.57 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.57 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1298.57 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1291.61 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1293.80 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1295.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1296.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.11 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.53 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1297.53 MB
+INFO:root:[YOLO] CPU Time: 0.4688 s, Memory: 1297.53 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.53 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.53 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.53 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.53 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1297.53 MB
+INFO:root:[Frame Total] CPU Time: 0.5312 s, Memory: 1297.53 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1298.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1298.83 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1298.83 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1298.83 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1298.83 MB
+INFO:root:[OCR] CPU Time: 2.0469 s, Memory: 1301.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1301.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1301.14 MB
+INFO:root:[Frame Total] CPU Time: 2.2656 s, Memory: 1301.14 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1303.14 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1303.14 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1303.14 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.14 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1303.14 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1303.14 MB
+INFO:root:[OCR] CPU Time: 2.0938 s, Memory: 1298.42 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1300.04 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1300.92 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1301.79 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1302.61 MB
+INFO:root:[Frame Total] CPU Time: 2.3125 s, Memory: 1303.66 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1303.57 MB
+INFO:root:[OCR] CPU Time: 2.5938 s, Memory: 1304.18 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1304.18 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1304.18 MB
+INFO:root:[OCR] CPU Time: 2.4844 s, Memory: 1305.92 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1305.92 MB
+INFO:root:[Frame Total] CPU Time: 5.2500 s, Memory: 1305.92 MB
+INFO:root:[YOLO] CPU Time: 0.3594 s, Memory: 1306.50 MB
+INFO:root:[OCR] CPU Time: 2.7344 s, Memory: 1287.52 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1289.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1290.79 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1291.97 MB
+INFO:root:[OCR] CPU Time: 1.9688 s, Memory: 1292.82 MB
+INFO:root:[Frame Total] CPU Time: 5.1250 s, Memory: 1306.94 MB
+INFO:root:[YOLO] CPU Time: 0.3438 s, Memory: 1306.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.97 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.97 MB
+INFO:root:[Frame Total] CPU Time: 0.3906 s, Memory: 1306.97 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1307.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.02 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1307.02 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1306.98 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1306.98 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.96 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1285.77 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1290.71 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.98 MB
+INFO:root:[OCR] CPU Time: 2.2969 s, Memory: 1304.42 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1305.67 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.50 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1306.50 MB
+INFO:root:[Frame Total] CPU Time: 2.5156 s, Memory: 1306.50 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1307.13 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.13 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.13 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.13 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.13 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1307.13 MB
+INFO:root:[Frame Total] CPU Time: 0.3438 s, Memory: 1307.13 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1298.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1301.13 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1302.32 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1303.32 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1304.45 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1305.51 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1307.13 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1263.23 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.30 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.67 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1267.67 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1268.80 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1269.86 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1273.67 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.3281 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.0938 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.0938 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1260.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1262.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.77 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1270.14 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.3594 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.3594 s, Memory: 1260.87 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1259.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1261.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1262.02 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1265.45 MB
+INFO:root:[YOLO] CPU Time: 0.3281 s, Memory: 1275.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1277.26 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1278.32 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.39 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1280.26 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1281.26 MB
+INFO:root:[Frame Total] CPU Time: 0.3594 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1260.66 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1262.06 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1263.29 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.35 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.47 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1269.29 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1275.96 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1277.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1278.90 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.78 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1280.71 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1281.53 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1278.21 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1280.71 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1281.90 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1282.90 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1283.40 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.40 MB
+INFO:root:[OCR] CPU Time: 2.5625 s, Memory: 1264.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.59 MB
+INFO:root:[Frame Total] CPU Time: 2.7812 s, Memory: 1270.53 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1277.55 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1280.30 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1281.18 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1282.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1282.87 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1281.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.32 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1261.20 MB
+INFO:root:[OCR] CPU Time: 0.0156 s, Memory: 1263.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.57 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.01 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1267.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1268.07 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1271.51 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1281.98 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1260.58 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1280.14 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1282.06 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.27 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1260.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1262.10 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1263.17 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.17 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.30 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.30 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1269.80 MB
+INFO:root:[YOLO] CPU Time: 0.3281 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.3594 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1272.38 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1274.63 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1275.95 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1277.38 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1278.63 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.63 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1282.76 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1260.23 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1263.36 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1261.29 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1262.54 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1263.61 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1264.67 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.73 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1269.48 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1261.71 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1283.43 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 3.0156 s, Memory: 1282.68 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1282.68 MB
+INFO:root:[Frame Total] CPU Time: 3.2031 s, Memory: 1282.68 MB
+INFO:root:[YOLO] CPU Time: 0.4062 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 2.9688 s, Memory: 1283.59 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.59 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.59 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.59 MB
+INFO:root:[OCR] CPU Time: 2.1562 s, Memory: 1285.25 MB
+INFO:root:[Frame Total] CPU Time: 5.5312 s, Memory: 1285.25 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1285.35 MB
+INFO:root:[OCR] CPU Time: 2.7656 s, Memory: 1286.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.20 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.20 MB
+INFO:root:[Frame Total] CPU Time: 2.9688 s, Memory: 1286.20 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1286.04 MB
+INFO:root:[OCR] CPU Time: 3.0469 s, Memory: 1280.93 MB
+INFO:root:[OCR] CPU Time: 2.4531 s, Memory: 1285.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1285.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1285.82 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1285.82 MB
+INFO:root:[Frame Total] CPU Time: 5.8125 s, Memory: 1285.82 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1286.40 MB
+INFO:root:[OCR] CPU Time: 3.3750 s, Memory: 1286.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.89 MB
+INFO:root:[Frame Total] CPU Time: 3.5469 s, Memory: 1286.89 MB
+INFO:root:[YOLO] CPU Time: 0.5469 s, Memory: 1265.94 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1268.88 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1270.81 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1272.44 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1273.88 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1275.44 MB
+INFO:root:[Frame Total] CPU Time: 0.5781 s, Memory: 1280.06 MB
+INFO:root:[YOLO] CPU Time: 0.4688 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[Frame Total] CPU Time: 0.4844 s, Memory: 1286.83 MB
+INFO:root:[YOLO] CPU Time: 0.3750 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[Frame Total] CPU Time: 0.3906 s, Memory: 1286.83 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[Frame Total] CPU Time: 0.3438 s, Memory: 1286.83 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1286.83 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1286.83 MB
+INFO:root:[YOLO] CPU Time: 0.4688 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.4688 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1263.89 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.21 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1268.64 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1286.83 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.83 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1286.83 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1281.27 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1283.08 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1284.02 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1284.70 MB
+INFO:root:[OCR] CPU Time: 3.0312 s, Memory: 1266.90 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1268.59 MB
+INFO:root:[Frame Total] CPU Time: 3.2031 s, Memory: 1271.96 MB
+INFO:root:[YOLO] CPU Time: 0.2812 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1266.69 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1268.94 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1270.19 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1271.32 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1272.44 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1273.44 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1277.19 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1263.99 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1265.18 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1266.05 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1267.18 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1268.18 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1271.48 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.84 MB
+INFO:root:[Frame Total] CPU Time: 0.3125 s, Memory: 1286.84 MB
+INFO:root:[YOLO] CPU Time: 0.1094 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[Frame Total] CPU Time: 0.1562 s, Memory: 1286.85 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1283.43 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1285.46 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.62 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1286.85 MB
+INFO:root:[YOLO] CPU Time: 0.3750 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.85 MB
+INFO:root:[Frame Total] CPU Time: 0.3750 s, Memory: 1286.85 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.4062 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.4219 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.2969 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.3281 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.3750 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.3281 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.4375 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.4688 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.5625 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 3.3594 s, Memory: 1277.46 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.38 MB
+INFO:root:[Frame Total] CPU Time: 3.9219 s, Memory: 1283.38 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.1562 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2031 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.2188 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.2500 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2969 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.3906 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 2.4219 s, Memory: 1286.87 MB
+INFO:root:[Frame Total] CPU Time: 2.8125 s, Memory: 1286.87 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.1250 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2812 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.1094 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.1094 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.2656 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2656 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.1406 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.2031 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2188 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.1719 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.1719 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.3125 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.3438 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2500 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.3750 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.3906 s, Memory: 1263.53 MB
+INFO:root:[YOLO] CPU Time: 0.2344 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.86 MB
+INFO:root:[Frame Total] CPU Time: 0.2344 s, Memory: 1286.86 MB
+INFO:root:[YOLO] CPU Time: 0.1875 s, Memory: 1286.87 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.87 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.87 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.87 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.87 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1286.87 MB
+INFO:root:[Frame Total] CPU Time: 0.1875 s, Memory: 1286.87 MB
+INFO:root:[YOLO] CPU Time: 0.1250 s, Memory: 1279.06 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.06 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.06 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.06 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.06 MB
+INFO:root:[OCR] CPU Time: 0.0000 s, Memory: 1279.06 MB
+INFO:root:[Frame Total] CPU Time: 0.1406 s, Memory: 1279.06 MB

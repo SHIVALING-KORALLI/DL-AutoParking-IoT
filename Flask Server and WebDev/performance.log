@@ -1,0 +1,428 @@
+2025-05-02 19:16:13,110 [INFO]  * Restarting with stat
+2025-05-02 19:16:15,880 [WARNING]  * Debugger is active!
+2025-05-02 19:16:15,883 [INFO]  * Debugger PIN: 384-322-470
+2025-05-02 19:16:18,110 [INFO] Running wrong parking check...
+2025-05-02 19:16:18,110 [INFO] Found 0 booked slots
+2025-05-02 19:16:18,110 [INFO] Auto-release check at 2025-05-02 19:16:18.110988
+2025-05-02 19:16:20,878 [INFO] Running wrong parking check...
+2025-05-02 19:16:20,878 [INFO] Found 0 booked slots
+2025-05-02 19:16:20,879 [INFO] Auto-release check at 2025-05-02 19:16:20.879802
+2025-05-02 19:16:23,115 [INFO] Running wrong parking check...
+2025-05-02 19:16:23,115 [INFO] Found 0 booked slots
+2025-05-02 19:16:23,115 [INFO] Auto-release check at 2025-05-02 19:16:23.115473
+2025-05-02 19:16:25,881 [INFO] Running wrong parking check...
+2025-05-02 19:16:25,881 [INFO] Found 0 booked slots
+2025-05-02 19:16:25,881 [INFO] Auto-release check at 2025-05-02 19:16:25.881707
+2025-05-02 19:16:28,137 [INFO] Running wrong parking check...
+2025-05-02 19:16:28,137 [INFO] Found 0 booked slots
+2025-05-02 19:16:28,139 [INFO] Auto-release check at 2025-05-02 19:16:28.139248
+2025-05-02 19:16:30,884 [INFO] Running wrong parking check...
+2025-05-02 19:16:30,886 [INFO] Found 0 booked slots
+2025-05-02 19:16:30,886 [INFO] Auto-release check at 2025-05-02 19:16:30.886700
+2025-05-02 19:16:33,140 [INFO] Running wrong parking check...
+2025-05-02 19:16:33,140 [INFO] Found 0 booked slots
+2025-05-02 19:16:33,142 [INFO] Auto-release check at 2025-05-02 19:16:33.142746
+2025-05-02 19:16:35,909 [INFO] Running wrong parking check...
+2025-05-02 19:16:35,976 [INFO] Found 0 booked slots
+2025-05-02 19:16:36,004 [INFO] Auto-release check at 2025-05-02 19:16:36.004784
+2025-05-02 19:16:38,144 [INFO] Running wrong parking check...
+2025-05-02 19:16:38,144 [INFO] Found 0 booked slots
+2025-05-02 19:16:38,144 [INFO] Auto-release check at 2025-05-02 19:16:38.144324
+2025-05-02 19:16:41,023 [INFO] Running wrong parking check...
+2025-05-02 19:16:41,023 [INFO] Found 0 booked slots
+2025-05-02 19:16:41,023 [INFO] Auto-release check at 2025-05-02 19:16:41.023311
+2025-05-02 19:16:43,146 [INFO] Running wrong parking check...
+2025-05-02 19:16:43,146 [INFO] Found 0 booked slots
+2025-05-02 19:16:43,146 [INFO] Auto-release check at 2025-05-02 19:16:43.146686
+2025-05-02 19:16:43,394 [INFO] Client connected: VZ1Nrg2Wot-TRj_eAAAB, sent current state with 8 slots
+2025-05-02 19:16:46,024 [INFO] Running wrong parking check...
+2025-05-02 19:16:46,024 [INFO] Found 0 booked slots
+2025-05-02 19:16:46,024 [INFO] Auto-release check at 2025-05-02 19:16:46.024511
+2025-05-02 19:16:48,149 [INFO] Running wrong parking check...
+2025-05-02 19:16:48,149 [INFO] Found 0 booked slots
+2025-05-02 19:16:48,149 [INFO] Auto-release check at 2025-05-02 19:16:48.149137
+2025-05-02 19:16:51,030 [INFO] Running wrong parking check...
+2025-05-02 19:16:51,034 [INFO] Found 0 booked slots
+2025-05-02 19:16:51,035 [INFO] Auto-release check at 2025-05-02 19:16:51.035371
+2025-05-02 19:16:53,150 [INFO] Running wrong parking check...
+2025-05-02 19:16:53,150 [INFO] Found 0 booked slots
+2025-05-02 19:16:53,150 [INFO] Auto-release check at 2025-05-02 19:16:53.150538
+2025-05-02 19:16:56,067 [INFO] Running wrong parking check...
+2025-05-02 19:16:56,210 [INFO] Found 0 booked slots
+2025-05-02 19:16:56,375 [INFO] Auto-release check at 2025-05-02 19:16:56.375740
+2025-05-02 19:16:58,152 [INFO] Running wrong parking check...
+2025-05-02 19:16:58,154 [INFO] Found 0 booked slots
+2025-05-02 19:16:58,154 [INFO] Auto-release check at 2025-05-02 19:16:58.154487
+2025-05-02 19:17:01,563 [INFO] Running wrong parking check...
+2025-05-02 19:17:01,563 [INFO] Found 0 booked slots
+2025-05-02 19:17:01,565 [INFO] Auto-release check at 2025-05-02 19:17:01.565272
+2025-05-02 19:17:03,157 [INFO] Running wrong parking check...
+2025-05-02 19:17:03,163 [INFO] Found 0 booked slots
+2025-05-02 19:17:03,164 [INFO] Auto-release check at 2025-05-02 19:17:03.164260
+2025-05-02 19:17:04,534 [INFO] Client connected: FPZhKIXF0eroxC56AAAF, sent current state with 8 slots
+2025-05-02 19:17:05,019 [INFO] Client FPZhKIXF0eroxC56AAAF requested slots update
+2025-05-02 19:17:05,305 [INFO] Client FPZhKIXF0eroxC56AAAF requested slots update
+2025-05-02 19:17:06,566 [INFO] Running wrong parking check...
+2025-05-02 19:17:06,566 [INFO] Found 0 booked slots
+2025-05-02 19:17:06,572 [INFO] Auto-release check at 2025-05-02 19:17:06.572663
+2025-05-02 19:17:08,174 [INFO] Running wrong parking check...
+2025-05-02 19:17:08,174 [INFO] Found 0 booked slots
+2025-05-02 19:17:08,174 [INFO] Auto-release check at 2025-05-02 19:17:08.174167
+2025-05-02 19:17:09,226 [INFO] Client FPZhKIXF0eroxC56AAAF requested slots update
+2025-05-02 19:17:11,577 [INFO] Running wrong parking check...
+2025-05-02 19:17:11,577 [INFO] Found 0 booked slots
+2025-05-02 19:17:11,577 [INFO] Auto-release check at 2025-05-02 19:17:11.577386
+2025-05-02 19:17:13,179 [INFO] Running wrong parking check...
+2025-05-02 19:17:13,179 [INFO] Found 0 booked slots
+2025-05-02 19:17:13,182 [INFO] Auto-release check at 2025-05-02 19:17:13.182560
+2025-05-02 19:17:13,468 [INFO] Client connected: i3Z3hY6-wr8dOWH_AAAH, sent current state with 8 slots
+2025-05-02 19:17:13,511 [INFO] Received partial update for 1 slots
+2025-05-02 19:17:13,511 [INFO] Status change for slot2: Free -> Occupied
+2025-05-02 19:17:13,511 [INFO] Plate change for slot2:  -> KA 09 NK 2109
+2025-05-02 19:17:13,558 [INFO] Updated existing occupation entry for slot slot2
+2025-05-02 19:17:13,561 [INFO] Successfully updated parking data for slot slot2
+2025-05-02 19:17:13,575 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:17:13,575 [INFO] [PERF] LED Indicator Response (via MQTT): 0.00 ms
+2025-05-02 19:17:13,591 [INFO] [PERF] Web Interface Update: 1.02 ms
+2025-05-02 19:17:13,595 [INFO] [PERF] End-to-End System Response: 79.97 ms
+2025-05-02 19:17:13,633 [INFO] Received partial update for 1 slots
+2025-05-02 19:17:13,653 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:17:13,662 [INFO] [PERF] LED Indicator Response (via MQTT): 9.82 ms
+2025-05-02 19:17:13,665 [INFO] [PERF] Web Interface Update: 0.00 ms
+2025-05-02 19:17:13,665 [INFO] [PERF] End-to-End System Response: 31.12 ms
+2025-05-02 19:17:13,714 [INFO] Received partial update for 1 slots
+2025-05-02 19:17:13,714 [INFO] Status change for slot8: Free -> Occupied
+2025-05-02 19:17:13,726 [INFO] Plate change for slot8:  -> KA 01 AJ 9876
+2025-05-02 19:17:13,733 [INFO] Updated existing occupation entry for slot slot8
+2025-05-02 19:17:13,743 [INFO] Successfully updated parking data for slot slot8
+2025-05-02 19:17:13,748 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:17:13,757 [INFO] [PERF] LED Indicator Response (via MQTT): 9.94 ms
+2025-05-02 19:17:13,757 [INFO] [PERF] Web Interface Update: 0.00 ms
+2025-05-02 19:17:13,757 [INFO] [PERF] End-to-End System Response: 43.70 ms
+2025-05-02 19:17:14,108 [INFO] Received full update with 8 slots
+2025-05-02 19:17:14,118 [INFO] Updated exit time for slot slot1
+2025-05-02 19:17:14,142 [INFO] Successfully updated parking data for slot slot1
+2025-05-02 19:17:14,149 [INFO] Updated existing occupation entry for slot slot2
+2025-05-02 19:17:14,165 [INFO] Successfully updated parking data for slot slot2
+2025-05-02 19:17:14,181 [INFO] Successfully updated parking data for slot slot3
+2025-05-02 19:17:14,189 [INFO] Updated exit time for slot slot4
+2025-05-02 19:17:14,232 [INFO] Successfully updated parking data for slot slot4
+2025-05-02 19:17:14,238 [INFO] Updated exit time for slot slot5
+2025-05-02 19:17:14,280 [INFO] Successfully updated parking data for slot slot5
+2025-05-02 19:17:14,298 [INFO] Successfully updated parking data for slot slot6
+2025-05-02 19:17:14,325 [INFO] Successfully updated parking data for slot slot7
+2025-05-02 19:17:14,345 [INFO] Updated existing occupation entry for slot slot8
+2025-05-02 19:17:14,362 [INFO] Successfully updated parking data for slot slot8
+2025-05-02 19:17:14,362 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:17:14,374 [INFO] [PERF] LED Indicator Response (via MQTT): 11.50 ms
+2025-05-02 19:17:14,374 [INFO] [PERF] Web Interface Update: 0.00 ms
+2025-05-02 19:17:14,390 [INFO] [PERF] End-to-End System Response: 281.97 ms
+2025-05-02 19:17:16,579 [INFO] Running wrong parking check...
+2025-05-02 19:17:16,579 [INFO] Found 0 booked slots
+2025-05-02 19:17:16,582 [INFO] Auto-release check at 2025-05-02 19:17:16.582019
+2025-05-02 19:17:18,184 [INFO] Running wrong parking check...
+2025-05-02 19:17:18,189 [INFO] Found 0 booked slots
+2025-05-02 19:17:18,191 [INFO] Auto-release check at 2025-05-02 19:17:18.190107
+2025-05-02 19:17:18,191 [INFO] Client connected: JR7cLfYZa4tuzAkQAAAJ, sent current state with 8 slots
+2025-05-02 19:17:19,231 [INFO] Client JR7cLfYZa4tuzAkQAAAJ requested slots update
+2025-05-02 19:17:19,233 [INFO] Client JR7cLfYZa4tuzAkQAAAJ requested slots update
+2025-05-02 19:17:21,583 [INFO] Running wrong parking check...
+2025-05-02 19:17:21,584 [INFO] Found 0 booked slots
+2025-05-02 19:17:21,584 [INFO] Auto-release check at 2025-05-02 19:17:21.584201
+2025-05-02 19:17:23,193 [INFO] Running wrong parking check...
+2025-05-02 19:17:23,193 [INFO] Found 0 booked slots
+2025-05-02 19:17:23,193 [INFO] Auto-release check at 2025-05-02 19:17:23.193978
+2025-05-02 19:17:24,765 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-21.xml
+2025-05-02 19:17:24,788 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-22.xml
+2025-05-02 19:17:24,795 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-23.xml
+2025-05-02 19:17:24,800 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-24.xml
+2025-05-02 19:17:24,805 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-25.xml
+2025-05-02 19:17:24,816 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-26.xml
+2025-05-02 19:17:24,829 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-27.xml
+2025-05-02 19:17:24,843 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-02-28.xml
+2025-05-02 19:17:24,852 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-01.xml
+2025-05-02 19:17:24,859 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-02.xml
+2025-05-02 19:17:24,866 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-03.xml
+2025-05-02 19:17:24,874 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-04.xml
+2025-05-02 19:17:24,889 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-05.xml
+2025-05-02 19:17:24,898 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-06.xml
+2025-05-02 19:17:24,908 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-07.xml
+2025-05-02 19:17:24,919 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-08.xml
+2025-05-02 19:17:24,932 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-09.xml
+2025-05-02 19:17:24,943 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-10.xml
+2025-05-02 19:17:24,955 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-11.xml
+2025-05-02 19:17:24,965 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-12.xml
+2025-05-02 19:17:24,971 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-13.xml
+2025-05-02 19:17:24,972 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-14.xml
+2025-05-02 19:17:24,984 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-15.xml
+2025-05-02 19:17:24,989 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-16.xml
+2025-05-02 19:17:24,998 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-17.xml
+2025-05-02 19:17:25,008 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-18.xml
+2025-05-02 19:17:25,015 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-19.xml
+2025-05-02 19:17:25,029 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-20.xml
+2025-05-02 19:17:25,042 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-21.xml
+2025-05-02 19:17:25,049 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-22.xml
+2025-05-02 19:17:25,053 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-23.xml
+2025-05-02 19:17:25,059 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-24.xml
+2025-05-02 19:17:25,065 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-25.xml
+2025-05-02 19:17:25,072 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-26.xml
+2025-05-02 19:17:25,076 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-27.xml
+2025-05-02 19:17:25,080 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-28.xml
+2025-05-02 19:17:25,087 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-29.xml
+2025-05-02 19:17:25,096 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-30.xml
+2025-05-02 19:17:25,101 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-03-31.xml
+2025-05-02 19:17:25,101 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-01.xml
+2025-05-02 19:17:25,108 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-02.xml
+2025-05-02 19:17:25,116 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-03.xml
+2025-05-02 19:17:25,120 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-04.xml
+2025-05-02 19:17:25,125 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-05.xml
+2025-05-02 19:17:25,131 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-06.xml
+2025-05-02 19:17:25,140 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-07.xml
+2025-05-02 19:17:25,143 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-08.xml
+2025-05-02 19:17:25,154 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-09.xml
+2025-05-02 19:17:25,202 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-10.xml
+2025-05-02 19:17:25,223 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-11.xml
+2025-05-02 19:17:25,252 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-12.xml
+2025-05-02 19:17:25,282 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-13.xml
+2025-05-02 19:17:25,308 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-14.xml
+2025-05-02 19:17:25,328 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-15.xml
+2025-05-02 19:17:25,351 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-16.xml
+2025-05-02 19:17:25,383 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-17.xml
+2025-05-02 19:17:25,403 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-18.xml
+2025-05-02 19:17:25,426 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-19.xml
+2025-05-02 19:17:25,445 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-20.xml
+2025-05-02 19:17:25,485 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-21.xml
+2025-05-02 19:17:25,516 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-22.xml
+2025-05-02 19:17:25,541 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-23.xml
+2025-05-02 19:17:25,567 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-24.xml
+2025-05-02 19:17:25,603 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-25.xml
+2025-05-02 19:17:25,641 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-26.xml
+2025-05-02 19:17:25,679 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-27.xml
+2025-05-02 19:17:25,717 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-28.xml
+2025-05-02 19:17:25,753 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-29.xml
+2025-05-02 19:17:25,785 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-04-30.xml
+2025-05-02 19:17:25,811 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-05-01.xml
+2025-05-02 19:17:25,842 [INFO] Parsing XML file: C:\Users\pinky\OneDrive\Documents\Desktop\server\parking History\parking_2025-05-02.xml
+2025-05-02 19:17:25,876 [INFO] Successfully parsed 2594 parking records
+2025-05-02 19:17:26,586 [INFO] Running wrong parking check...
+2025-05-02 19:17:26,592 [INFO] Found 0 booked slots
+2025-05-02 19:17:26,592 [INFO] Auto-release check at 2025-05-02 19:17:26.592440
+2025-05-02 19:17:28,206 [INFO] Running wrong parking check...
+2025-05-02 19:17:28,370 [INFO] Found 0 booked slots
+2025-05-02 19:17:28,397 [INFO] Auto-release check at 2025-05-02 19:17:28.397863
+2025-05-02 19:17:31,604 [INFO] Running wrong parking check...
+2025-05-02 19:17:31,624 [INFO] Found 0 booked slots
+2025-05-02 19:17:31,656 [INFO] Auto-release check at 2025-05-02 19:17:31.656602
+2025-05-02 19:17:33,439 [INFO] Running wrong parking check...
+2025-05-02 19:17:33,439 [INFO] Found 0 booked slots
+2025-05-02 19:17:33,439 [INFO] Auto-release check at 2025-05-02 19:17:33.439218
+2025-05-02 19:17:36,678 [INFO] Running wrong parking check...
+2025-05-02 19:17:36,682 [INFO] Found 0 booked slots
+2025-05-02 19:17:36,692 [INFO] Auto-release check at 2025-05-02 19:17:36.692419
+2025-05-02 19:17:38,443 [INFO] Running wrong parking check...
+2025-05-02 19:17:38,448 [INFO] Found 0 booked slots
+2025-05-02 19:17:38,449 [INFO] Auto-release check at 2025-05-02 19:17:38.449673
+2025-05-02 19:17:41,709 [INFO] Running wrong parking check...
+2025-05-02 19:17:41,709 [INFO] Found 0 booked slots
+2025-05-02 19:17:41,711 [INFO] Auto-release check at 2025-05-02 19:17:41.711232
+2025-05-02 19:17:43,454 [INFO] Running wrong parking check...
+2025-05-02 19:17:43,455 [INFO] Found 0 booked slots
+2025-05-02 19:17:43,460 [INFO] Auto-release check at 2025-05-02 19:17:43.460545
+2025-05-02 19:17:44,312 [INFO] Client connected: lukLLpUJ9tRrpwjLAAAL, sent current state with 8 slots
+2025-05-02 19:17:44,425 [INFO] Received full update with 8 slots
+2025-05-02 19:17:44,506 [INFO] Successfully updated parking data for slot slot1
+2025-05-02 19:17:44,562 [INFO] Updated existing occupation entry for slot slot2
+2025-05-02 19:17:44,594 [INFO] Successfully updated parking data for slot slot2
+2025-05-02 19:17:44,627 [INFO] Successfully updated parking data for slot slot3
+2025-05-02 19:17:44,654 [INFO] Successfully updated parking data for slot slot4
+2025-05-02 19:17:44,741 [INFO] Successfully updated parking data for slot slot5
+2025-05-02 19:17:44,814 [INFO] Successfully updated parking data for slot slot6
+2025-05-02 19:17:44,841 [INFO] Successfully updated parking data for slot slot7
+2025-05-02 19:17:44,852 [INFO] Updated existing occupation entry for slot slot8
+2025-05-02 19:17:44,863 [INFO] Successfully updated parking data for slot slot8
+2025-05-02 19:17:44,868 [INFO] [PERF] Slot Status to MQTT: 2.58 ms
+2025-05-02 19:17:44,873 [INFO] [PERF] LED Indicator Response (via MQTT): 7.34 ms
+2025-05-02 19:17:44,874 [INFO] [PERF] Web Interface Update: 1.08 ms
+2025-05-02 19:17:44,874 [INFO] [PERF] End-to-End System Response: 449.52 ms
+2025-05-02 19:17:44,939 [INFO] Client connected: bZhuJjMUGoVJmz6eAAAO, sent current state with 8 slots
+2025-05-02 19:17:46,712 [INFO] Running wrong parking check...
+2025-05-02 19:17:46,731 [INFO] Found 0 booked slots
+2025-05-02 19:17:46,744 [INFO] Auto-release check at 2025-05-02 19:17:46.744043
+2025-05-02 19:17:47,592 [INFO] Client lukLLpUJ9tRrpwjLAAAL requested slots update
+2025-05-02 19:17:47,610 [INFO] Client lukLLpUJ9tRrpwjLAAAL requested slots update
+2025-05-02 19:17:48,463 [INFO] Running wrong parking check...
+2025-05-02 19:17:48,467 [INFO] Found 0 booked slots
+2025-05-02 19:17:48,471 [INFO] Auto-release check at 2025-05-02 19:17:48.469210
+2025-05-02 19:17:51,837 [INFO] Running wrong parking check...
+2025-05-02 19:17:51,952 [INFO] Found 0 booked slots
+2025-05-02 19:17:52,022 [INFO] Auto-release check at 2025-05-02 19:17:52.022491
+2025-05-02 19:17:53,587 [INFO] Running wrong parking check...
+2025-05-02 19:17:53,595 [INFO] Found 0 booked slots
+2025-05-02 19:17:53,609 [INFO] Auto-release check at 2025-05-02 19:17:53.609439
+2025-05-02 19:17:57,047 [INFO] Running wrong parking check...
+2025-05-02 19:17:57,063 [INFO] Found 0 booked slots
+2025-05-02 19:17:57,211 [INFO] Auto-release check at 2025-05-02 19:17:57.211862
+2025-05-02 19:17:58,845 [INFO] Running wrong parking check...
+2025-05-02 19:17:58,884 [INFO] Found 0 booked slots
+2025-05-02 19:17:58,946 [INFO] Auto-release check at 2025-05-02 19:17:58.946400
+2025-05-02 19:18:02,223 [INFO] Running wrong parking check...
+2025-05-02 19:18:02,226 [INFO] Found 0 booked slots
+2025-05-02 19:18:02,248 [INFO] Auto-release check at 2025-05-02 19:18:02.248027
+2025-05-02 19:18:03,971 [INFO] Running wrong parking check...
+2025-05-02 19:18:03,971 [INFO] Found 0 booked slots
+2025-05-02 19:18:03,971 [INFO] Auto-release check at 2025-05-02 19:18:03.971674
+2025-05-02 19:18:07,257 [INFO] Running wrong parking check...
+2025-05-02 19:18:07,257 [INFO] Found 0 booked slots
+2025-05-02 19:18:07,257 [INFO] Auto-release check at 2025-05-02 19:18:07.257347
+2025-05-02 19:18:09,096 [INFO] Running wrong parking check...
+2025-05-02 19:18:09,129 [INFO] Found 0 booked slots
+2025-05-02 19:18:09,144 [INFO] Auto-release check at 2025-05-02 19:18:09.144033
+2025-05-02 19:18:12,270 [INFO] Running wrong parking check...
+2025-05-02 19:18:12,290 [INFO] Found 0 booked slots
+2025-05-02 19:18:12,311 [INFO] Auto-release check at 2025-05-02 19:18:12.311058
+2025-05-02 19:18:14,158 [INFO] Running wrong parking check...
+2025-05-02 19:18:14,158 [INFO] Found 0 booked slots
+2025-05-02 19:18:14,158 [INFO] Auto-release check at 2025-05-02 19:18:14.158409
+2025-05-02 19:18:15,074 [INFO] Client connected: MjTiuwkK7_svDNgDAAAR, sent current state with 8 slots
+2025-05-02 19:18:15,118 [INFO] Received partial update for 1 slots
+2025-05-02 19:18:15,123 [INFO] Status change for slot1: Free -> Occupied
+2025-05-02 19:18:15,126 [INFO] Plate change for slot1:  -> KA 04 U 1098
+2025-05-02 19:18:15,196 [INFO] Created new occupation entry for slot slot1
+2025-05-02 19:18:15,423 [INFO] Successfully updated parking data for slot slot1
+2025-05-02 19:18:15,466 [INFO] [PERF] Slot Status to MQTT: 10.20 ms
+2025-05-02 19:18:15,507 [INFO] [PERF] LED Indicator Response (via MQTT): 50.93 ms
+2025-05-02 19:18:15,512 [INFO] [PERF] Web Interface Update: 1.56 ms
+2025-05-02 19:18:15,608 [INFO] [PERF] End-to-End System Response: 490.62 ms
+2025-05-02 19:18:16,845 [INFO] Received partial update for 1 slots
+2025-05-02 19:18:17,229 [INFO] Status change for slot4: Free -> Occupied
+2025-05-02 19:18:17,256 [INFO] Plate change for slot4:  -> KA 08 SK 4321
+2025-05-02 19:18:17,280 [INFO] Created new occupation entry for slot slot4
+2025-05-02 19:18:17,380 [INFO] Running wrong parking check...
+2025-05-02 19:18:17,388 [INFO] Successfully updated parking data for slot slot4
+2025-05-02 19:18:17,396 [INFO] Found 0 booked slots
+2025-05-02 19:18:17,409 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:18:17,409 [INFO] Auto-release check at 2025-05-02 19:18:17.409635
+2025-05-02 19:18:17,461 [INFO] [PERF] LED Indicator Response (via MQTT): 51.57 ms
+2025-05-02 19:18:17,473 [INFO] [PERF] Web Interface Update: 0.00 ms
+2025-05-02 19:18:17,491 [INFO] [PERF] End-to-End System Response: 645.69 ms
+2025-05-02 19:18:17,495 [INFO] Received full update with 8 slots
+2025-05-02 19:18:17,510 [INFO] Updated existing occupation entry for slot slot1
+2025-05-02 19:18:17,558 [INFO] Successfully updated parking data for slot slot1
+2025-05-02 19:18:17,594 [INFO] Updated existing occupation entry for slot slot2
+2025-05-02 19:18:17,698 [INFO] Successfully updated parking data for slot slot2
+2025-05-02 19:18:17,806 [INFO] Successfully updated parking data for slot slot3
+2025-05-02 19:18:17,819 [INFO] Updated existing occupation entry for slot slot4
+2025-05-02 19:18:17,838 [INFO] Successfully updated parking data for slot slot4
+2025-05-02 19:18:17,860 [INFO] Successfully updated parking data for slot slot5
+2025-05-02 19:18:17,884 [INFO] Successfully updated parking data for slot slot6
+2025-05-02 19:18:17,921 [INFO] Successfully updated parking data for slot slot7
+2025-05-02 19:18:17,921 [INFO] Updated existing occupation entry for slot slot8
+2025-05-02 19:18:17,948 [INFO] Successfully updated parking data for slot slot8
+2025-05-02 19:18:17,960 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:18:17,969 [INFO] [PERF] LED Indicator Response (via MQTT): 9.16 ms
+2025-05-02 19:18:17,973 [INFO] [PERF] Web Interface Update: 1.02 ms
+2025-05-02 19:18:17,973 [INFO] [PERF] End-to-End System Response: 477.26 ms
+2025-05-02 19:18:19,161 [INFO] Running wrong parking check...
+2025-05-02 19:18:19,161 [INFO] Found 0 booked slots
+2025-05-02 19:18:19,162 [INFO] Auto-release check at 2025-05-02 19:18:19.161405
+2025-05-02 19:18:22,521 [INFO] Running wrong parking check...
+2025-05-02 19:18:22,558 [INFO] Found 0 booked slots
+2025-05-02 19:18:22,599 [INFO] Auto-release check at 2025-05-02 19:18:22.599091
+2025-05-02 19:18:24,163 [INFO] Running wrong parking check...
+2025-05-02 19:18:24,187 [INFO] Found 0 booked slots
+2025-05-02 19:18:24,189 [INFO] Auto-release check at 2025-05-02 19:18:24.189786
+2025-05-02 19:18:28,062 [INFO] Running wrong parking check...
+2025-05-02 19:18:28,072 [INFO] Found 0 booked slots
+2025-05-02 19:18:28,097 [INFO] Auto-release check at 2025-05-02 19:18:28.097179
+2025-05-02 19:18:29,191 [INFO] Running wrong parking check...
+2025-05-02 19:18:29,191 [INFO] Found 0 booked slots
+2025-05-02 19:18:29,191 [INFO] Auto-release check at 2025-05-02 19:18:29.191579
+2025-05-02 19:18:33,110 [INFO] Running wrong parking check...
+2025-05-02 19:18:33,110 [INFO] Found 0 booked slots
+2025-05-02 19:18:33,110 [INFO] Auto-release check at 2025-05-02 19:18:33.110546
+2025-05-02 19:18:34,193 [INFO] Running wrong parking check...
+2025-05-02 19:18:34,195 [INFO] Found 0 booked slots
+2025-05-02 19:18:34,195 [INFO] Auto-release check at 2025-05-02 19:18:34.195548
+2025-05-02 19:18:38,114 [INFO] Running wrong parking check...
+2025-05-02 19:18:38,115 [INFO] Found 0 booked slots
+2025-05-02 19:18:38,115 [INFO] Auto-release check at 2025-05-02 19:18:38.115783
+2025-05-02 19:18:39,203 [INFO] Running wrong parking check...
+2025-05-02 19:18:39,203 [INFO] Found 0 booked slots
+2025-05-02 19:18:39,203 [INFO] Auto-release check at 2025-05-02 19:18:39.203398
+2025-05-02 19:18:39,360 [INFO] Received partial update for 1 slots
+2025-05-02 19:18:39,377 [INFO] Plate change for slot1: KA 04 U 1098 -> KA 04 DX 1098
+2025-05-02 19:18:39,392 [INFO] Updated existing occupation entry for slot slot1
+2025-05-02 19:18:39,455 [INFO] Successfully updated parking data for slot slot1
+2025-05-02 19:18:39,475 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:18:39,494 [INFO] [PERF] LED Indicator Response (via MQTT): 4.96 ms
+2025-05-02 19:18:39,509 [INFO] [PERF] Web Interface Update: 3.00 ms
+2025-05-02 19:18:39,524 [INFO] [PERF] End-to-End System Response: 163.99 ms
+2025-05-02 19:18:43,137 [INFO] Running wrong parking check...
+2025-05-02 19:18:43,151 [INFO] Found 0 booked slots
+2025-05-02 19:18:43,167 [INFO] Auto-release check at 2025-05-02 19:18:43.167392
+2025-05-02 19:18:44,354 [INFO] Running wrong parking check...
+2025-05-02 19:18:44,513 [INFO] Received full update with 8 slots
+2025-05-02 19:18:44,528 [INFO] Updated existing occupation entry for slot slot1
+2025-05-02 19:18:44,565 [INFO] Successfully updated parking data for slot slot1
+2025-05-02 19:18:44,611 [INFO] Found 0 booked slots
+2025-05-02 19:18:44,612 [INFO] Auto-release check at 2025-05-02 19:18:44.612865
+2025-05-02 19:18:44,575 [INFO] Updated existing occupation entry for slot slot2
+2025-05-02 19:18:45,096 [INFO] Successfully updated parking data for slot slot2
+2025-05-02 19:18:45,443 [INFO] Successfully updated parking data for slot slot3
+2025-05-02 19:18:45,447 [INFO] Updated existing occupation entry for slot slot4
+2025-05-02 19:18:46,106 [INFO] Successfully updated parking data for slot slot4
+2025-05-02 19:18:46,517 [INFO] Successfully updated parking data for slot slot5
+2025-05-02 19:18:46,605 [INFO] Successfully updated parking data for slot slot6
+2025-05-02 19:18:46,668 [INFO] Successfully updated parking data for slot slot7
+2025-05-02 19:18:46,678 [INFO] Updated existing occupation entry for slot slot8
+2025-05-02 19:18:46,728 [INFO] Successfully updated parking data for slot slot8
+2025-05-02 19:18:46,739 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:18:46,739 [INFO] [PERF] LED Indicator Response (via MQTT): 0.00 ms
+2025-05-02 19:18:46,743 [INFO] [PERF] Web Interface Update: 0.00 ms
+2025-05-02 19:18:46,754 [INFO] [PERF] End-to-End System Response: 2241.03 ms
+2025-05-02 19:18:48,119 [INFO] Client connected: bp_BQz9t9K_CqpFiAAAT, sent current state with 8 slots
+2025-05-02 19:18:48,464 [INFO] Running wrong parking check...
+2025-05-02 19:18:48,464 [INFO] Found 0 booked slots
+2025-05-02 19:18:48,464 [INFO] Auto-release check at 2025-05-02 19:18:48.464681
+2025-05-02 19:18:49,738 [INFO] Running wrong parking check...
+2025-05-02 19:18:49,738 [INFO] Found 0 booked slots
+2025-05-02 19:18:49,738 [INFO] Auto-release check at 2025-05-02 19:18:49.738995
+2025-05-02 19:18:53,467 [INFO] Running wrong parking check...
+2025-05-02 19:18:53,467 [INFO] Found 0 booked slots
+2025-05-02 19:18:53,467 [INFO] Auto-release check at 2025-05-02 19:18:53.467498
+2025-05-02 19:18:53,670 [INFO] Received partial update for 1 slots
+2025-05-02 19:18:53,670 [INFO] Status change for slot5: Free -> Occupied
+2025-05-02 19:18:53,670 [INFO] Plate change for slot5:  -> KA 07 TK 5432
+2025-05-02 19:18:53,675 [INFO] Created new occupation entry for slot slot5
+2025-05-02 19:18:53,774 [INFO] Successfully updated parking data for slot slot5
+2025-05-02 19:18:53,780 [INFO] [PERF] Slot Status to MQTT: 0.00 ms
+2025-05-02 19:18:53,781 [INFO] [PERF] LED Indicator Response (via MQTT): 1.98 ms
+2025-05-02 19:18:53,806 [INFO] [PERF] Web Interface Update: 8.07 ms
+2025-05-02 19:18:53,807 [INFO] [PERF] End-to-End System Response: 137.29 ms
+2025-05-02 19:18:54,740 [INFO] Running wrong parking check...
+2025-05-02 19:18:54,829 [INFO] Found 0 booked slots
+2025-05-02 19:18:54,839 [INFO] Auto-release check at 2025-05-02 19:18:54.839098
+2025-05-02 19:18:58,548 [INFO] Running wrong parking check...
+2025-05-02 19:18:58,558 [INFO] Found 0 booked slots
+2025-05-02 19:18:58,558 [INFO] Auto-release check at 2025-05-02 19:18:58.558560
+2025-05-02 19:18:59,880 [INFO] Running wrong parking check...
+2025-05-02 19:18:59,973 [INFO] Found 0 booked slots
+2025-05-02 19:19:00,053 [INFO] Auto-release check at 2025-05-02 19:19:00.053174
+2025-05-02 19:19:03,563 [INFO] Running wrong parking check...
+2025-05-02 19:19:03,563 [INFO] Found 0 booked slots
+2025-05-02 19:19:03,563 [INFO] Auto-release check at 2025-05-02 19:19:03.563767
+2025-05-02 19:19:05,077 [INFO] Running wrong parking check...
+2025-05-02 19:19:05,099 [INFO] Found 0 booked slots
+2025-05-02 19:19:05,099 [INFO] Auto-release check at 2025-05-02 19:19:05.099153
+2025-05-02 19:19:08,625 [INFO] Running wrong parking check...
+2025-05-02 19:19:08,742 [INFO] Found 0 booked slots
+2025-05-02 19:19:08,870 [INFO] Auto-release check at 2025-05-02 19:19:08.870929
+2025-05-02 19:19:10,106 [INFO] Running wrong parking check...
+2025-05-02 19:19:10,106 [INFO] Found 0 booked slots
+2025-05-02 19:19:10,109 [INFO] Auto-release check at 2025-05-02 19:19:10.109806
+2025-05-02 19:19:13,882 [INFO] Running wrong parking check...
+2025-05-02 19:19:13,884 [INFO] Found 0 booked slots
+2025-05-02 19:19:13,884 [INFO] Auto-release check at 2025-05-02 19:19:13.884860
+2025-05-02 19:19:15,113 [INFO] Running wrong parking check...
+2025-05-02 19:19:15,113 [INFO] Found 0 booked slots
+2025-05-02 19:19:15,127 [INFO] Auto-release check at 2025-05-02 19:19:15.127410

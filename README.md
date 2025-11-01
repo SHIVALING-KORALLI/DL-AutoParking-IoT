@@ -120,7 +120,9 @@ If you want to use this project commercially or include it in larger commercial 
 
 📄 [Full License Text](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
 
-▶ [Project Demo Video](https://drive.google.com/file/d/12zFnvxbCbG6XQYL2Otb4nhMsEWVMUMb_/view?usp=sharing)
+▶ [Project Demo with live feed](https://drive.google.com/file/d/12zFnvxbCbG6XQYL2Otb4nhMsEWVMUMb_/view?usp=sharing)
+
+▶ [Project Demo with Video input](https://drive.google.com/file/d/1mmlPYrmhd0uZKXBo0nbWt1PpFp5qNCVa/view?usp=sharing)
 
 ## 🤝 Contributions
 
