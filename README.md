@@ -2,7 +2,14 @@
 
 ## 📝 Project Overview
 
-A cutting-edge Parking Management System that leverages computer vision and IoT technologies to provide real-time parking slot monitoring, booking, and management. Utilizing YOLO11 for vehicle detection and a robust Flask backend, this system offers an intelligent solution for parking space optimization.
+This project proposes a deep learning-based autonomous parking management system integrating YOLO11n 
+object detection, IoT communication, and edge hardware to modernize urban parking. It replaces conventional sensors via 
+a real-time video pipeline, MQTT protocol, and a NodeMCU-based implementation featuring 74HC595-driven LED ar
+rays. Achieving 94–97% detection accuracy and 458.4 ms latency, the system cuts deployment costs by 60–70%. Key 
+modules include multi-stage OCR for license plate recognition, intelligent vehicle classification, and wrong parking de
+tection with automated alerts. A hybrid ARIMA–linear regression model supports demand forecasting. Hardware-level 
+redundancy and energy-efficient microcontrollers ensure robustness under varied lighting and network conditions. The 
+integrated architecture enhances spatial efficiency, security, and sustainability in smart city scenarios.
 
 ## ✨ Key Features
 
@@ -12,9 +19,8 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 - **Booking System**: Reserve and release parking slots
 - **Wrong Parking Detection**: Intelligent tracking of booked vs. actual parking
 - **SMS Notifications**: Real-time alerts via Twilio
-- **Hardware Integration**: NodeMCU control for slot indicators
+- **Hardware Integration**: NodeMCU control with 74HC595-driven LED arrays
 - **Web Dashboard**: User-friendly interface for parking management
-- **Web Dashboard**: User-friendly interface for parking management  
 - **Data Analytics & Forecasting**: Utilize historical parking data for analytical insights and future parking demand predictions.  
 
 ## 🚀 Tech Stack
@@ -22,10 +28,10 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 - **Backend**: Flask
 - **Deep Learning**: YOLO11
 - **Database**: SQLite
-- **IoT**: NodeMCU (ESP8266/ESP32)
+- **IoT**: NodeMCU (ESP8266)
 - **Communication**: MQTT, WebSockets
 - **Notifications**: Twilio SMS
-- **Frontend**: HTML, JavaScript
+- **Frontend**: HTML, JavaScript and css
 
 ## 🔧 System Architecture
 
@@ -80,7 +86,7 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 
 ## 🌐 Access Points
 
-- **Web App**: `http://localhost:5000`
+- **Web App**: `http://localhost:5000` or like us with domain you can get fixed public url with cloudflare
 - **Client Dashboard**: Parking slot booking
 - **Management Dashboard**: User & slot management
 
@@ -93,7 +99,7 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 
 ## 🚧 Future Roadmap
 
-- [ ] Cloud deployment
+- [ ] Physical barriers on a parking slot
 - [ ] Mobile application
 - [ ] Enhanced ML model accuracy
 - [ ] Advanced analytics dashboard
@@ -101,7 +107,7 @@ A cutting-edge Parking Management System that leverages computer vision and IoT 
 ## 📊 System Requirements
 
 - **Server**: 4 GB RAM, 2 Core CPU
-- **Storage**: 20 GB
+- **Storage**: 10 GB
 - **Camera**: HD resolution (minimum)
 - **Network**: Stable WiFi/Ethernet
 
@@ -120,7 +126,7 @@ If you want to use this project commercially or include it in larger commercial 
 
 📄 [Full License Text](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
 
-▶ [Project Demo with live feed](https://drive.google.com/file/d/12zFnvxbCbG6XQYL2Otb4nhMsEWVMUMb_/view?usp=sharing)
+▶ [Project Demo with live feed](https://drive.google.com/file/d/1uqwVaEr8Rw0VUzLVXFwTLiuQKoxyNC4D/view?usp=sharing)
 
 ▶ [Project Demo with Video input](https://drive.google.com/file/d/1mmlPYrmhd0uZKXBo0nbWt1PpFp5qNCVa/view?usp=sharing)
 
