@@ -1,144 +1,84 @@
-# 🚗 Deep Learning-Powered Autonomous Parking Solution with IoT-Enabled Real-Time Management
+<!-- HEADER -->
+<h1 align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=500&lines=🚗+Deep+Learning-Powered+Autonomous+Parking+System;IoT-Enabled+Real-Time+Smart+City+Management;Built+with+YOLO11n+%2B+ESP8266+%2B+Flask" alt="Typing SVG" />
+</h1>
 
-## 📝 Project Overview
-
-This project proposes a deep learning-based autonomous parking management system integrating YOLO11n 
-object detection, IoT communication, and edge hardware to modernize urban parking. It replaces conventional sensors via 
-a real-time video pipeline, MQTT protocol, and a NodeMCU-based implementation featuring 74HC595-driven LED ar
-rays. Achieving 94–97% detection accuracy and 458.4 ms latency, the system cuts deployment costs by 60–70%. Key 
-modules include multi-stage OCR for license plate recognition, intelligent vehicle classification, and wrong parking de
-tection with automated alerts. A hybrid ARIMA–linear regression model supports demand forecasting. Hardware-level 
-redundancy and energy-efficient microcontrollers ensure robustness under varied lighting and network conditions. The 
-integrated architecture enhances spatial efficiency, security, and sustainability in smart city scenarios.
-
-## ✨ Key Features
-
-- **Real-time Vehicle Detection**: Advanced YOLO11 deep learning model
-- **Automated Slot Tracking**: Dynamic parking slot status updates
-- **User Management**: Role-based login (Client & Management)
-- **Booking System**: Reserve and release parking slots
-- **Wrong Parking Detection**: Intelligent tracking of booked vs. actual parking
-- **SMS Notifications**: Real-time alerts via Twilio
-- **Hardware Integration**: NodeMCU control with 74HC595-driven LED arrays
-- **Web Dashboard**: User-friendly interface for parking management
-- **Data Analytics & Forecasting**: Utilize historical parking data for analytical insights and future parking demand predictions.  
-
-## 🚀 Tech Stack
-
-- **Backend**: Flask
-- **Deep Learning**: YOLO11
-- **Database**: SQLite
-- **IoT**: NodeMCU (ESP8266)
-- **Communication**: MQTT, WebSockets
-- **Notifications**: Twilio SMS
-- **Frontend**: HTML, JavaScript and css
-
-## 🔧 System Architecture
-
-1. **Computer Vision Detection**
-   - YOLO11 processes camera feed
-   - Identifies vehicle presence
-   - Updates slot status in real-time
-
-2. **Web Application**
-   - User registration/login
-   - Parking slot booking
-   - Real-time slot availability
-   - Management dashboard
-
-3. **Hardware Control**
-   - NodeMCU updates OLED display
-   - Controls slot indicator lights
-   - Receives MQTT updates
-
-## 📦 Installation
-
-### Prerequisites
-- Python 3.8+
-- Arduino IDE
-- MQTT Broker (Mosquitto)
-- Twilio Account
-
-### Quick Setup
-
-1. **Clone Repository**
-   ```bash
-   git clone https://github.com/SHIVALING-KORALLI/DL-AutoParking-IoT.git
-   cd DL-AutoParking-IoT
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   cd server
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-
-3. **Configure Environment**
-   - Copy `.env.example` to `.env`
-   - Update Twilio, MQTT, and other credentials
-
-4. **Run Application**
-   ```bash
-   python app.py
-   ```
-
-## 🌐 Access Points
-
-- **Web App**: `http://localhost:5000` or like us with domain you can get fixed public url with cloudflare
-- **Client Dashboard**: Parking slot booking
-- **Management Dashboard**: User & slot management
-
-## 🔍 Unique Innovations
-
-- Automated booking expiry
-- Wrong parking detection
-- Real-time hardware integration
-- Comprehensive logging system
-
-## 🚧 Future Roadmap
-
-- [ ] Physical barriers on a parking slot
-- [ ] Mobile application
-- [ ] Enhanced ML model accuracy
-- [ ] Advanced analytics dashboard
-
-## 📊 System Requirements
-
-- **Server**: 4 GB RAM, 2 Core CPU
-- **Storage**: 10 GB
-- **Camera**: HD resolution (minimum)
-- **Network**: Stable WiFi/Ethernet
-
-## 📜 License
-
-This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
-
-- ✅ Free to use for learning, research, and academic purposes
-- ❌ Not allowed for commercial use without permission
-- 🧾 Proper credit must always be given to the author
-
-If you want to use this project commercially or include it in larger commercial software, please contact:
-
-**SHIVALING KALLAPPA KORALLI**  
-🔗 [GitHub Profile](https://github.com/SHIVALING-KORALLI)
-
-📄 [Full License Text](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
-
-▶ [Project Demo with live feed](https://drive.google.com/file/d/1uqwVaEr8Rw0VUzLVXFwTLiuQKoxyNC4D/view?usp=sharing)
-
-▶ [Project Demo with Video input](https://drive.google.com/file/d/1mmlPYrmhd0uZKXBo0nbWt1PpFp5qNCVa/view?usp=sharing)
-
-## 🤝 Contributions
-
-Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
-
-## 👨‍💻 Author
-
-**Shivaling Koralli**
-- GitHub: [@SHIVALING-KORALLI](https://github.com/SHIVALING-KORALLI)
+<p align="center">
+  <a href="https://github.com/SHIVALING-KORALLI/DL-AutoParking-IoT/stargazers"><img src="https://img.shields.io/github/stars/SHIVALING-KORALLI/DL-AutoParking-IoT?style=for-the-badge&color=yellow" /></a>
+  <a href="https://github.com/SHIVALING-KORALLI/DL-AutoParking-IoT/network/members"><img src="https://img.shields.io/github/forks/SHIVALING-KORALLI/DL-AutoParking-IoT?style=for-the-badge&color=orange" /></a>
+  <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/YOLOv11n-Deep%20Learning-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/IoT-NodeMCU%20%7C%20MQTT-red?style=for-the-badge" />
+</p>
 
 ---
 
-**⭐ Don't forget to star this repository if you find it helpful!**
+## 🧭 Abstract
+
+A **Deep Learning-powered autonomous parking system** integrating **YOLO11n**, **IoT communication**, and **edge hardware** to redefine smart-city parking.  
+It replaces conventional sensors with a **camera-based vision pipeline**, **MQTT protocol**, and **NodeMCU + 74HC595 hardware**, achieving:
+
+- 🎯 **94–97 % accuracy**  
+- ⚡ **458 ms latency** (CPU inference)  
+- 💰 **60–70 % cost reduction** vs. sensor-per-slot models  
+
+> Published & Presented in **ICDTE 2025 (Springer Series)** — Research-backed innovation for scalable smart parking infrastructure.
+
+---
+
+## 🌟 Key Highlights
+
+| Category | Features |
+|-----------|-----------|
+| 🧠 **Computer Vision** | YOLO11n multi-class detection (Cars / Bikes / Plates), OCR pipeline with adaptive preprocessing |
+| 🌐 **IoT Layer** | MQTT-based real-time hardware sync via ESP8266 (NodeMCU) |
+| 💡 **Hardware Design** | Shift-register (74HC595) LED arrays + 0.96″ OLED status display |
+| 📊 **Analytics** | Hybrid **ARIMA + Linear Regression** forecasting (8.3 % MAPE) |
+| 🔒 **Web System** | Flask + Socket.IO dashboards for clients & admins |
+| 🔔 **Automation** | SMS alerts (Twilio), auto-release bookings, violation detection |
+| ⚙️ **Cloud Access** | Cloudflare Zero Trust tunnel for secure public access |
+
+---
+
+## 🧩 Architecture Overview
+
+<p align="center">
+  <img src="https://github.com/SHIVALING-KORALLI/DL-AutoParking-IoT/assets/system-architecture-diagram.png" alt="System Architecture" width="85%">
+</p>
+
+1. **Detection Module:** YOLO11n → OCR → Slot mapping  
+2. **Web Backend:** Flask + Socket.IO for real-time updates  
+3. **IoT Control:** MQTT ↔ NodeMCU ↔ 74HC595 LED arrays  
+4. **Forecasting & Analytics:** ARIMA-LR models for demand prediction  
+5. **Public Access:** Cloudflare tunnel → Secure domain + QR-based access  
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer | Technologies |
+|-------|---------------|
+| **Deep Learning** | YOLO11n, OpenCV, EasyOCR |
+| **Backend** | Python, Flask, Socket.IO, SQLAlchemy |
+| **IoT / Hardware** | NodeMCU (ESP8266), MQTT, 74HC595, OLED (I²C) |
+| **Frontend** | HTML / CSS / JavaScript + Chart.js |
+| **Forecasting & Analytics** | ARIMA, Linear Regression, Pandas, WeasyPrint |
+| **Notifications & Deployment** | Twilio SMS API, Cloudflare Zero Trust |
+
+---
+
+## 🧱 Installation
+
+### Prerequisites
+- Python 3.8 +  
+- Arduino IDE  
+- MQTT Broker (e.g., Mosquitto)  
+- Twilio Account (for SMS alerts)
+
+### Setup
+```bash
+git clone https://github.com/SHIVALING-KORALLI/DL-AutoParking-IoT.git
+cd DL-AutoParking-IoT/server
+python -m venv venv
+source venv/bin/activate   # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
